@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+	</PropertyGroup>
+
+
+
+	<ItemGroup>
+		<ProjectReference Include="..\MyBlog.Server.EntityFramework.Core\MyBlog.Server.EntityFramework.Core.csproj" />
+	</ItemGroup>
+
+</Project>

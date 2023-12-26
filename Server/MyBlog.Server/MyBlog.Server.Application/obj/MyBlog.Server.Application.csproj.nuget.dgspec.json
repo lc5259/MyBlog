@@ -1,0 +1,150 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\project\\MyBlog\\MyBlog\\Server\\MyBlog.Server\\MyBlog.Server.Application\\MyBlog.Server.Application.csproj": {}
+  },
+  "projects": {
+    "C:\\project\\MyBlog\\MyBlog\\Server\\MyBlog.Server\\MyBlog.Server.Application\\MyBlog.Server.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\project\\MyBlog\\MyBlog\\Server\\MyBlog.Server\\MyBlog.Server.Application\\MyBlog.Server.Application.csproj",
+        "projectName": "MyBlog.Server.Application",
+        "projectPath": "C:\\project\\MyBlog\\MyBlog\\Server\\MyBlog.Server\\MyBlog.Server.Application\\MyBlog.Server.Application.csproj",
+        "packagesPath": "C:\\Users\\liu Chuang\\.nuget\\packages\\",
+        "outputPath": "C:\\project\\MyBlog\\MyBlog\\Server\\MyBlog.Server\\MyBlog.Server.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\liu Chuang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\Packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\project\\MyBlog\\MyBlog\\Server\\MyBlog.Server\\MyBlog.Server.Core\\MyBlog.Server.Core.csproj": {
+                "projectPath": "C:\\project\\MyBlog\\MyBlog\\Server\\MyBlog.Server\\MyBlog.Server.Core\\MyBlog.Server.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\project\\MyBlog\\MyBlog\\Server\\MyBlog.Server\\MyBlog.Server.Core\\MyBlog.Server.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\project\\MyBlog\\MyBlog\\Server\\MyBlog.Server\\MyBlog.Server.Core\\MyBlog.Server.Core.csproj",
+        "projectName": "MyBlog.Server.Core",
+        "projectPath": "C:\\project\\MyBlog\\MyBlog\\Server\\MyBlog.Server\\MyBlog.Server.Core\\MyBlog.Server.Core.csproj",
+        "packagesPath": "C:\\Users\\liu Chuang\\.nuget\\packages\\",
+        "outputPath": "C:\\project\\MyBlog\\MyBlog\\Server\\MyBlog.Server\\MyBlog.Server.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\liu Chuang\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\Packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Furion": {
+              "target": "Package",
+              "version": "[4.9.1.7, )"
+            },
+            "Furion.Extras.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[4.9.1.7, )"
+            },
+            "Furion.Extras.ObjectMapper.Mapster": {
+              "target": "Package",
+              "version": "[4.9.1.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

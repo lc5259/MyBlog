@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "euVKUOPEW/GO20jzHceJWwbSfIa0f9UUcT/6hllax5w=",
+  "Source": "MyBlog.Server.Web.Entry",
+  "BasePath": "_content/MyBlog.Server.Web.Entry",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

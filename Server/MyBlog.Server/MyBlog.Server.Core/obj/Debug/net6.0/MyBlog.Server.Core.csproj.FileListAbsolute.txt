@@ -1,0 +1,13 @@
+C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Core\bin\Debug\net6.0\MyBlog.Server.Core.deps.json
+C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Core\bin\Debug\net6.0\MyBlog.Server.Core.dll
+C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Core\bin\Debug\net6.0\MyBlog.Server.Core.pdb
+C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Core\bin\Debug\net6.0\MyBlog.Server.Core.xml
+C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Core\obj\Debug\net6.0\MyBlog.Server.Core.csproj.AssemblyReference.cache
+C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Core\obj\Debug\net6.0\MyBlog.Server.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Core\obj\Debug\net6.0\MyBlog.Server.Core.AssemblyInfoInputs.cache
+C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Core\obj\Debug\net6.0\MyBlog.Server.Core.AssemblyInfo.cs
+C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Core\obj\Debug\net6.0\MyBlog.Server.Core.csproj.CoreCompileInputs.cache
+C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Core\obj\Debug\net6.0\MyBlog.Server.Core.dll
+C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Core\obj\Debug\net6.0\refint\MyBlog.Server.Core.dll
+C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Core\obj\Debug\net6.0\MyBlog.Server.Core.pdb
+C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Core\obj\Debug\net6.0\ref\MyBlog.Server.Core.dll
