@@ -23,3 +23,4 @@ C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Web.Core\obj\Debug\n
 C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Web.Core\obj\Debug\net6.0\refint\MyBlog.Server.Web.Core.dll
 C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Web.Core\obj\Debug\net6.0\MyBlog.Server.Web.Core.pdb
 C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Web.Core\obj\Debug\net6.0\ref\MyBlog.Server.Web.Core.dll
+C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Web.Core\bin\Debug\net6.0\dbsettings.json

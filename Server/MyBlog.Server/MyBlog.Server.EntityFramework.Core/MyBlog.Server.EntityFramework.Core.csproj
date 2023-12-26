@@ -6,6 +6,23 @@
 	</PropertyGroup>
 
 
+	<ItemGroup>
+	  <None Remove="dbsettings.json" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <Content Include="dbsettings.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.25" />
+	</ItemGroup>
+
+
 
 	<ItemGroup>
 		<ProjectReference Include="..\MyBlog.Server.Core\MyBlog.Server.Core.csproj" />

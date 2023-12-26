@@ -1,7 +1,7 @@
 ﻿{
   "$schema": "https://gitee.com/dotnetchina/Furion/raw/v4/schemas/v4/furion-schema.json",
   "ConnectionStrings": {
-    "DbConnectionString": "Server=localhost;Database=Furion;User=sa;Password=000000;MultipleActiveResultSets=True;",
-    "Sqlite3ConnectionString": "Data Source=./Furion.db"
+    "SqlServerConnectionString": "Server=124.221.50.140;Database=blog;User ID = sa; Password=lc123456.;Trusted_Connection=False;",
+    
   }
 }

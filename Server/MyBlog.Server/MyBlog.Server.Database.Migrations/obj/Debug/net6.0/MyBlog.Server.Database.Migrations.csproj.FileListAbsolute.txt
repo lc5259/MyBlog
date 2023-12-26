@@ -16,3 +16,4 @@ C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Database.Migrations\
 C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Database.Migrations\obj\Debug\net6.0\refint\MyBlog.Server.Database.Migrations.dll
 C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Database.Migrations\obj\Debug\net6.0\MyBlog.Server.Database.Migrations.pdb
 C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Database.Migrations\obj\Debug\net6.0\ref\MyBlog.Server.Database.Migrations.dll
+C:\project\MyBlog\MyBlog\Server\MyBlog.Server\MyBlog.Server.Database.Migrations\bin\Debug\net6.0\dbsettings.json

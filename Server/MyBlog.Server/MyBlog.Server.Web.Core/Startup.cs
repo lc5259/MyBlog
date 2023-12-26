@@ -13,13 +13,17 @@ public class Startup : AppStartup
         services.AddConsoleFormatter();
         services.AddJwt<JwtHandler>();
 
+
+       
+
         services.AddCorsAccessor();
 
         services.AddControllers()
                 .AddInjectWithUnifyResult();
 
-        
-        
+        var sgg3333 = App.Configuration["SpecificationDocumentSettings:DocumentTitle"];
+        var sgg = App.Configuration["ConnectionStrings:DbConnectionString"];
+
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -37,6 +41,9 @@ public class Startup : AppStartup
 
         app.UseAuthentication();
         app.UseAuthorization();
+
+        //可以将多个配置或服务放在一个 Icomponent 派生类中
+        //app.UseComponent<testComponent>( env);
 
         app.UseInject(string.Empty);
 
