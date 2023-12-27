@@ -1,4 +1,6 @@
-﻿namespace MyBlog.Server.Application;
+﻿using MyBlog.Server.Application.System.Services;
+
+namespace MyBlog.Server.Application.System;
 
 /// <summary>
 /// 系统服务接口

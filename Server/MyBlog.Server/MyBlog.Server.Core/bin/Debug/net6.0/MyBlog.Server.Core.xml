@@ -4,5 +4,550 @@
         <name>MyBlog.Server.Core</name>
     </assembly>
     <members>
+        <member name="P:MyBlog.Server.Core.Entities.Gallery.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Gallery.tags">
+            <summary>
+            标签
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Gallery.preview_url">
+            <summary>
+            预览图
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Gallery.image_url">
+            <summary>
+            大图
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Gallery.previewid">
+            <summary>
+            预览图片id
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Gallery.imageid">
+            <summary>
+            大图id
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Job.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Job.prev_fire_time">
+            <summary>
+            上次运行时间
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Job.next_fire_time">
+            <summary>
+            下次运行时间
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Job.Comment">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.JobHistory.job_name">
+            <summary>
+            作业名
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.JobHistory.start_time">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.JobHistory.end_time">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.JobHistory.status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.JobHistory.error_msg">
+            <summary>
+            错误原因
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.MailVertification.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.MailVertification.mail_address">
+            <summary>
+            邮箱地址
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.MailVertification.login_request">
+            <summary>
+            登录请求信息
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.MailVertification.expire_time">
+            <summary>
+            过期时间
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.MailVertification.content">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.MailVertification.is_active">
+            <summary>
+            是否激活
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.MailVertification.mail_type">
+            <summary>
+            激活类型
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.MessageRemind.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.MessageRemind.receiverId">
+            <summary>
+            接收人id
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.MessageRemind.receiverId_name">
+            <summary>
+            接收人名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.MessageRemind.is_read">
+            <summary>
+            是否阅读
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.MessageRemind.is_read_name">
+            <summary>
+            是否阅读
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.MessageRemind.content">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.MessageRemind.message_type">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Robot.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Robot.hook">
+            <summary>
+            钩子地址
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Robot.Comment">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Robot.robot_type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Robot.robot_type_name">
+            <summary>
+            类型名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.RobotMessageTask.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.RobotMessageTask.content">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.RobotMessageTask.runtime">
+            <summary>
+            执行时间
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.RobotMessageTask.message_type">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.RobotMessageTask.message_type_name">
+            <summary>
+            消息类型名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.RobotMessageTask.robotid">
+            <summary>
+            机器人
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.RobotMessageTask.robotid_name">
+            <summary>
+            机器人名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.RobotMessageTask.job_state">
+            <summary>
+            任务状态
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.RobotMessageTask.job_state_name">
+            <summary>
+            任务状态名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysConfig.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysConfig.code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysConfig.Comment">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysConfig.value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysEntity.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysEntity.code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysParam.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysParam.code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysParam.sys_paramGroupId">
+            <summary>
+            选项集
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysParam.sys_paramgroupid_name">
+            <summary>
+            选项集名
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysParamGroup.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysParamGroup.code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRole.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRole.Comment">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRole.is_basic">
+            <summary>
+            是否基础角色
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRole.is_basic_name">
+            <summary>
+            是否基础角色
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRole.parent_roleid">
+            <summary>
+            继承角色
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRole.parent_roleid_name">
+            <summary>
+            继承角色
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRolePrivilege.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRolePrivilege.sys_roleid">
+            <summary>
+            角色id
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRolePrivilege.sys_roleid_name">
+            <summary>
+            角色名
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRolePrivilege.privilege">
+            <summary>
+            权限值
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRolePrivilege.objectid">
+            <summary>
+            对象id
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRolePrivilege.objectid_name">
+            <summary>
+            对象名
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRolePrivilege.object_type">
+            <summary>
+            对象类型
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.UserInfo.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.UserInfo.code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.UserInfo.gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.UserInfo.gender_name">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.UserInfo.realname">
+            <summary>
+            真实姓名
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.UserInfo.mailbox">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.UserInfo.introduction">
+            <summary>
+            个人介绍
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.UserInfo.cellphone">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.UserInfo.avatar">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.UserInfo.life_photo">
+            <summary>
+            生活照
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.UserInfo.roleid">
+            <summary>
+            角色权限id
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.UserInfo.github_id">
+            <summary>
+            Github ID
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.UserInfo.gitee_id">
+            <summary>
+            Gitee ID
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.UserInfo.roleid_name">
+            <summary>
+            角色权限名
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.UserInfo.statecode">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.UserInfo.statecode_name">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.VersionScriptExecutionLog.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.VersionScriptExecutionLog.is_success">
+            <summary>
+            是否执行成功
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Module.SysAttrs.SysAttrs.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Module.SysAttrs.SysAttrs.code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Module.SysAttrs.SysAttrs.entityid">
+            <summary>
+            实体id
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Module.SysAttrs.SysAttrs.entityid_name">
+            <summary>
+            实体名
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Module.SysAttrs.SysAttrs.attr_type">
+            <summary>
+            字段类型
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Module.SysAttrs.SysAttrs.attr_length">
+            <summary>
+            字段长度
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Module.SysAttrs.SysAttrs.isrequire">
+            <summary>
+            是否必填
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Module.SysAttrs.SysAttrs.default_value">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Module.SysMenu.SysMenu.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Module.SysMenu.SysMenu.parentid">
+            <summary>
+            上级菜单
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Module.SysMenu.SysMenu.parentid_name">
+            <summary>
+            上级菜单
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Module.SysMenu.SysMenu.router">
+            <summary>
+            路由地址
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Module.SysMenu.SysMenu.menu_index">
+            <summary>
+            菜单索引
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Module.SysMenu.SysMenu.statecode">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Module.SysMenu.SysMenu.statecode_name">
+            <summary>
+            状态名称
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Module.SysMenu.SysMenu.icon">
+            <summary>
+            图标
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Entity.SysFile.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Entity.SysFile.objectId">
+            <summary>
+            文件对象
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Entity.SysFile.real_name">
+            <summary>
+            真实文件名
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Entity.SysFile.file_path">
+            <summary>
+            文件路径
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Entity.SysFile.hash_code">
+            <summary>
+            哈希值
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Entity.SysFile.file_type">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="P:Sixpence.Web.Entity.SysFile.content_type">
+            <summary>
+            内容类型
+            </summary>
+        </member>
     </members>
 </doc>

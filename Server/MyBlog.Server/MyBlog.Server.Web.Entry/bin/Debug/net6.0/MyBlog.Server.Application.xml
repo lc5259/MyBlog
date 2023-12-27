@@ -4,12 +4,12 @@
         <name>MyBlog.Server.Application</name>
     </assembly>
     <members>
-        <member name="T:MyBlog.Server.Application.SystemAppService">
+        <member name="T:MyBlog.Server.Application.System.SystemAppService">
             <summary>
             系统服务接口
             </summary>
         </member>
-        <member name="M:MyBlog.Server.Application.SystemAppService.GetDescription">
+        <member name="M:MyBlog.Server.Application.System.SystemAppService.GetDescription">
             <summary>
             获取系统描述
             </summary>

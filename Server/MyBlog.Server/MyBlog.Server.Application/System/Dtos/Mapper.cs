@@ -1,4 +1,4 @@
-﻿namespace MyBlog.Server.Application;
+﻿namespace MyBlog.Server.Application.System.Dtos;
 
 public class Mapper : IRegister
 {
