@@ -27,7 +27,6 @@
 
 	<ItemGroup>
 		<Folder Include="System\Services\" />
-		<Folder Include="User\" />
 	</ItemGroup>
 
 </Project>

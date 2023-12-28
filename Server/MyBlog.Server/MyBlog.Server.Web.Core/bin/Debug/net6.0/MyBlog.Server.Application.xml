@@ -15,5 +15,90 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="P:MyBlog.Server.Application.User.Dto.userInfoDto.AddUserInfo.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Application.User.Dto.userInfoDto.AddUserInfo.code">
+            <summary>
+            编码
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Application.User.Dto.userInfoDto.AddUserInfo.gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Application.User.Dto.userInfoDto.AddUserInfo.gender_name">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Application.User.Dto.userInfoDto.AddUserInfo.realname">
+            <summary>
+            真实姓名
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Application.User.Dto.userInfoDto.AddUserInfo.mailbox">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Application.User.Dto.userInfoDto.AddUserInfo.introduction">
+            <summary>
+            个人介绍
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Application.User.Dto.userInfoDto.AddUserInfo.cellphone">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Application.User.Dto.userInfoDto.AddUserInfo.avatar">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Application.User.Dto.userInfoDto.AddUserInfo.life_photo">
+            <summary>
+            生活照
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Application.User.Dto.userInfoDto.AddUserInfo.roleid">
+            <summary>
+            角色权限id
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Application.User.Dto.userInfoDto.AddUserInfo.github_id">
+            <summary>
+            Github ID
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Application.User.Dto.userInfoDto.AddUserInfo.gitee_id">
+            <summary>
+            Gitee ID
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Application.User.Dto.userInfoDto.AddUserInfo.roleid_name">
+            <summary>
+            角色权限名
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Application.User.Dto.userInfoDto.AddUserInfo.statecode">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Application.User.Dto.userInfoDto.AddUserInfo.statecode_name">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Application.User.Dto.userInfoDto.AddUserInfo.CreatedTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
     </members>
 </doc>

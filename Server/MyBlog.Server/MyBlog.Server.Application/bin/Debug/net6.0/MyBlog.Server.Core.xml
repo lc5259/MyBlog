@@ -4,6 +4,21 @@
         <name>MyBlog.Server.Core</name>
     </assembly>
     <members>
+        <member name="P:MyBlog.Server.Core.ApiResult`1.IsSuccess">
+            <summary>
+            api是否成功
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.ApiResult`1.Message">
+            <summary>
+            错误消息
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.ApiResult`1.Data">
+            <summary>
+            返回数据
+            </summary>
+        </member>
         <member name="P:MyBlog.Server.Core.Entities.Gallery.name">
             <summary>
             名称
