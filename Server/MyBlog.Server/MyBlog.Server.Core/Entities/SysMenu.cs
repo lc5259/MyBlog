@@ -1,62 +1,138 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Web;
+﻿using MyBlog.Server.Core.Entities.Abstract;
+using MyBlog.Server.Core.Entities.Interface;
+using MyBlog.Server.Core.Enum;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Sixpence.Web.Module.SysMenu
+namespace MyBlog.Server.Core.Entities;
+
+/// <summary>
+/// 系统菜单表
+/// </summary>
+public class SysMenu : Entity<long>, IAvailability, ISortable, ICreatedUserId, ISoftDelete, ICreatedTime
 {
-   // [Entity("sys_menu", "系统菜单")]
-    public partial class SysMenu : EntityBase
-    {
-        /// <summary>
-        /// 名称
-        /// </summary>
-        [DataMember, Column, Comment("名称")]
-        public string name { get; set; }
+    /// <summary>
+    /// 菜单名称
+    /// </summary>
+    //[SugarColumn(Length = 32)]
+    [MaxLength(32)]
+    public string Name { get; set; }
 
-        /// <summary>
-        /// 上级菜单
-        /// </summary>
-        [DataMember, Column, Comment("上级菜单")]
-        public string parentid { get; set; }
+    /// <summary>
+    /// 菜单类型
+    /// </summary>
+    public MenuType Type { get; set; }
 
-        /// <summary>
-        /// 上级菜单
-        /// </summary>
-        [DataMember, Column, Comment("上级菜单")]
-        public string parentid_name { get; set; }
+    /// <summary>
+    /// 权限编码
+    /// </summary>
+    //[SugarColumn(Length = 128)]
+    [MaxLength(128)]
+    public string Code { get; set; }
 
-        /// <summary>
-        /// 路由地址
-        /// </summary>
-        [DataMember, Column, Comment("路由地址")]
-        public string router { get; set; }
+    /// <summary>
+    /// 父级菜单
+    /// </summary>
+    public long? ParentId { get; set; }
 
-        /// <summary>
-        /// 菜单索引
-        /// </summary>
-        [DataMember, Column, Comment("菜单索引")]
-        public int? menu_index { get; set; }
+    /// <summary>
+    /// 路由名
+    /// </summary>
+    //[SugarColumn(Length = 32)]
+    [MaxLength(32)]
+    public string RouteName { get; set; }
 
-        /// <summary>
-        /// 状态
-        /// </summary>
-        [DataMember, Column, Comment("状态")]
-        public bool? statecode { get; set; }
+    /// <summary>
+    /// 路由地址
+    /// </summary>
+    //[SugarColumn(Length = 128)]
+    [MaxLength(3128)]
+    public string Path { get; set; }
 
-        /// <summary>
-        /// 状态名称
-        /// </summary>
-        [DataMember, Column, Comment("状态名称")]
-        public string statecode_name { get; set; }
+    /// <summary>
+    /// 组件路径
+    /// </summary>
+    //[SugarColumn(Length = 128)]
+    [MaxLength(128)]
+    public string Component { get; set; }
 
-        /// <summary>
-        /// 图标
-        /// </summary>
-        [DataMember, Column, Comment("图标")]
-        public string icon { get; set; }
-    }
+    /// <summary>
+    /// 重定向地址
+    /// </summary>
+    //[SugarColumn(Length = 128)]
+    [MaxLength(128)]
+    public string Redirect { get; set; }
+
+    /// <summary>
+    /// 菜单图标
+    /// </summary>
+    //[SugarColumn(Length = 64)]
+    [MaxLength(64)]
+    public string Icon { get; set; }
+
+    /// <summary>
+    /// 是否内嵌页面
+    /// </summary>
+    public bool IsIframe { get; set; }
+
+    /// <summary>
+    /// 外链地址
+    /// </summary>
+    //[SugarColumn(Length = 256)]
+    [MaxLength(256)]
+    public string Link { get; set; }
+
+    /// <summary>
+    /// 是否可见
+    /// </summary>
+    public bool IsVisible { get; set; }
+
+    /// <summary>
+    /// 是否缓存
+    /// </summary>
+    public bool IsKeepAlive { get; set; }
+
+    /// <summary>
+    /// 是否固定
+    /// </summary>
+    public bool IsFixed { get; set; }
+
+    /// <summary>
+    /// 可用状态
+    /// </summary>
+    public AvailabilityStatus Status { get; set; }
+
+    /// <summary>
+    /// 排序值（值越小越靠前）
+    /// </summary>
+    public int Sort { get; set; }
+
+    /// <summary>
+    /// 备注
+    /// </summary>
+    //[SugarColumn(Length = 256)]
+    [MaxLength(256)]
+    public string Remark { get; set; }
+
+    /// <summary>
+    /// 创建人
+    /// </summary>
+    public long CreatedUserId { get; set; }
+
+    /// <summary>
+    /// 标记删除
+    /// </summary>
+    public bool DeleteMark { get; set; }
+
+    /// <summary>
+    /// 创建时间
+    /// </summary>
+    public DateTime CreatedTime { get; set; }
+
+    /// <summary>
+    /// 子菜单
+    /// </summary>
+    //[SugarColumn(IsIgnore = true)]
+    [NotMapped]
+    public List<SysMenu> Children { get; set; } = new();
 }

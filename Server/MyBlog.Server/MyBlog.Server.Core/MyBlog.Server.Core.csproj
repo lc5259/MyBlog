@@ -20,4 +20,8 @@
 		<PackageReference Include="Furion.Extras.ObjectMapper.Mapster" Version="4.9.1.7" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Entities\" />
+	</ItemGroup>
+
 </Project>

@@ -19,549 +19,1351 @@
             返回数据
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.Gallery.name">
+        <member name="T:MyBlog.Server.Core.Entities.Abstract.Entity`1">
             <summary>
-            名称
+            表实体继承
             </summary>
+            <typeparam name="TKey">主键类型</typeparam>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.Gallery.tags">
+        <member name="P:MyBlog.Server.Core.Entities.Abstract.Entity`1.Id">
             <summary>
-            标签
+            主键
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.Gallery.preview_url">
+        <member name="T:MyBlog.Server.Core.Entities.Albums">
             <summary>
-            预览图
+            相册表
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.Gallery.image_url">
+        <member name="P:MyBlog.Server.Core.Entities.Albums.Name">
             <summary>
-            大图
+            相册名称
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.Gallery.previewid">
+        <member name="P:MyBlog.Server.Core.Entities.Albums.Cover">
             <summary>
-            预览图片id
+            封面图
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.Gallery.imageid">
+        <member name="P:MyBlog.Server.Core.Entities.Albums.Type">
             <summary>
-            大图id
+            相册类型
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.Job.name">
+        <member name="P:MyBlog.Server.Core.Entities.Albums.Status">
             <summary>
-            名称
+            可用状态
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.Job.prev_fire_time">
+        <member name="P:MyBlog.Server.Core.Entities.Albums.Sort">
             <summary>
-            上次运行时间
+            排序值（值越小越靠前）
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.Job.next_fire_time">
+        <member name="P:MyBlog.Server.Core.Entities.Albums.Remark">
             <summary>
-            下次运行时间
+            备注
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.Job.Comment">
+        <member name="P:MyBlog.Server.Core.Entities.Albums.IsVisible">
             <summary>
-            描述
+            是否可见
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.JobHistory.job_name">
+        <member name="P:MyBlog.Server.Core.Entities.Albums.CreatedUserId">
             <summary>
-            作业名
+            创建人
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.JobHistory.start_time">
+        <member name="P:MyBlog.Server.Core.Entities.Albums.DeleteMark">
             <summary>
-            开始时间
+            标记删除
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.JobHistory.end_time">
+        <member name="P:MyBlog.Server.Core.Entities.Albums.CreatedTime">
             <summary>
-            结束时间
+            创建时间
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.JobHistory.status">
+        <member name="T:MyBlog.Server.Core.Entities.Article">
             <summary>
-            状态
+            文章表
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.JobHistory.error_msg">
+        <member name="P:MyBlog.Server.Core.Entities.Article.Title">
             <summary>
-            错误原因
+            标题
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.MailVertification.name">
+        <member name="P:MyBlog.Server.Core.Entities.Article.Summary">
             <summary>
-            名称
+            概要
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.MailVertification.mail_address">
+        <member name="P:MyBlog.Server.Core.Entities.Article.Cover">
             <summary>
-            邮箱地址
+            封面图
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.MailVertification.login_request">
+        <member name="P:MyBlog.Server.Core.Entities.Article.IsTop">
             <summary>
-            登录请求信息
+            是否置顶
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.MailVertification.expire_time">
+        <member name="P:MyBlog.Server.Core.Entities.Article.Views">
             <summary>
-            过期时间
+            浏览量
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.MailVertification.content">
+        <member name="P:MyBlog.Server.Core.Entities.Article.Author">
             <summary>
-            消息内容
+            作者
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.MailVertification.is_active">
+        <member name="P:MyBlog.Server.Core.Entities.Article.Link">
             <summary>
-            是否激活
+            原文地址
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.MailVertification.mail_type">
+        <member name="P:MyBlog.Server.Core.Entities.Article.CreationType">
             <summary>
-            激活类型
+            创作类型
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.MessageRemind.name">
+        <member name="P:MyBlog.Server.Core.Entities.Article.Content">
             <summary>
-            名称
+            文章正文（Html或markdown）
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.MessageRemind.receiverId">
+        <member name="P:MyBlog.Server.Core.Entities.Article.IsHtml">
             <summary>
-            接收人id
+            文章正文是否为html代码
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.MessageRemind.receiverId_name">
+        <member name="P:MyBlog.Server.Core.Entities.Article.PublishTime">
             <summary>
-            接收人名称
+            发布时间
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.MessageRemind.is_read">
+        <member name="P:MyBlog.Server.Core.Entities.Article.Status">
             <summary>
-            是否阅读
+            可用状态
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.MessageRemind.is_read_name">
+        <member name="P:MyBlog.Server.Core.Entities.Article.Sort">
             <summary>
-            是否阅读
+            排序值（值越小越靠前）
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.MessageRemind.content">
+        <member name="P:MyBlog.Server.Core.Entities.Article.IsAllowComments">
             <summary>
-            消息内容
+            是否允许评论
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.MessageRemind.message_type">
+        <member name="P:MyBlog.Server.Core.Entities.Article.ExpiredTime">
             <summary>
-            消息类型
+            过期时间（过期后文章不显示）
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.Robot.name">
+        <member name="P:MyBlog.Server.Core.Entities.Article.DeleteMark">
             <summary>
-            名称
+            标记删除
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.Robot.hook">
+        <member name="P:MyBlog.Server.Core.Entities.Article.UpdatedTime">
             <summary>
-            钩子地址
+            更新时间
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.Robot.Comment">
+        <member name="P:MyBlog.Server.Core.Entities.Article.CreatedUserId">
             <summary>
-            说明
+            创建人
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.Robot.robot_type">
+        <member name="P:MyBlog.Server.Core.Entities.Article.CreatedTime">
             <summary>
-            类型
+            创建时间
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.Robot.robot_type_name">
+        <member name="T:MyBlog.Server.Core.Entities.ArticleCategory">
             <summary>
-            类型名称
+            文章所属栏目表
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.RobotMessageTask.name">
+        <member name="P:MyBlog.Server.Core.Entities.ArticleCategory.ArticleId">
             <summary>
-            名称
+            文章Id
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.RobotMessageTask.content">
+        <member name="P:MyBlog.Server.Core.Entities.ArticleCategory.CategoryId">
             <summary>
-            消息内容
+            栏目Id
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.RobotMessageTask.runtime">
+        <member name="T:MyBlog.Server.Core.Entities.ArticleTag">
             <summary>
-            执行时间
+            文章标签表
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.RobotMessageTask.message_type">
+        <member name="P:MyBlog.Server.Core.Entities.ArticleTag.ArticleId">
             <summary>
-            消息类型
+            文章Id
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.RobotMessageTask.message_type_name">
+        <member name="P:MyBlog.Server.Core.Entities.ArticleTag.TagId">
             <summary>
-            消息类型名称
+            标签Id
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.RobotMessageTask.robotid">
+        <member name="T:MyBlog.Server.Core.Entities.AuthAccount">
             <summary>
-            机器人
+            博客授权用户
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.RobotMessageTask.robotid_name">
+        <member name="P:MyBlog.Server.Core.Entities.AuthAccount.OAuthId">
             <summary>
-            机器人名称
+            授权唯一标识
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.RobotMessageTask.job_state">
+        <member name="P:MyBlog.Server.Core.Entities.AuthAccount.Type">
             <summary>
-            任务状态
+            授权类型
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.RobotMessageTask.job_state_name">
+        <member name="P:MyBlog.Server.Core.Entities.AuthAccount.IsBlogger">
             <summary>
-            任务状态名称
+            博主标识
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysConfig.name">
+        <member name="P:MyBlog.Server.Core.Entities.AuthAccount.Name">
             <summary>
-            名称
+            姓名（昵称）
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysConfig.code">
-            <summary>
-            编码
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysConfig.Comment">
-            <summary>
-            描述
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysConfig.value">
-            <summary>
-            值
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysEntity.name">
-            <summary>
-            名称
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysEntity.code">
-            <summary>
-            编码
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysParam.name">
-            <summary>
-            名称
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysParam.code">
-            <summary>
-            编码
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysParam.sys_paramGroupId">
-            <summary>
-            选项集
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysParam.sys_paramgroupid_name">
-            <summary>
-            选项集名
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysParamGroup.name">
-            <summary>
-            名称
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysParamGroup.code">
-            <summary>
-            编码
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysRole.name">
-            <summary>
-            名称
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysRole.Comment">
-            <summary>
-            描述
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysRole.is_basic">
-            <summary>
-            是否基础角色
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysRole.is_basic_name">
-            <summary>
-            是否基础角色
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysRole.parent_roleid">
-            <summary>
-            继承角色
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysRole.parent_roleid_name">
-            <summary>
-            继承角色
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysRolePrivilege.name">
-            <summary>
-            名称
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysRolePrivilege.sys_roleid">
-            <summary>
-            角色id
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysRolePrivilege.sys_roleid_name">
-            <summary>
-            角色名
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysRolePrivilege.privilege">
-            <summary>
-            权限值
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysRolePrivilege.objectid">
-            <summary>
-            对象id
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysRolePrivilege.objectid_name">
-            <summary>
-            对象名
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.SysRolePrivilege.object_type">
-            <summary>
-            对象类型
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.UserInfo.name">
-            <summary>
-            名称
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.UserInfo.code">
-            <summary>
-            编码
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.UserInfo.gender">
+        <member name="P:MyBlog.Server.Core.Entities.AuthAccount.Gender">
             <summary>
             性别
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.UserInfo.gender_name">
-            <summary>
-            性别
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.UserInfo.realname">
-            <summary>
-            真实姓名
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.UserInfo.mailbox">
-            <summary>
-            邮箱
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.UserInfo.introduction">
-            <summary>
-            个人介绍
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.UserInfo.cellphone">
-            <summary>
-            手机号码
-            </summary>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.UserInfo.avatar">
+        <member name="P:MyBlog.Server.Core.Entities.AuthAccount.Avatar">
             <summary>
             头像
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.UserInfo.life_photo">
+        <member name="P:MyBlog.Server.Core.Entities.AuthAccount.Email">
             <summary>
-            生活照
+            邮箱
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.UserInfo.roleid">
+        <member name="P:MyBlog.Server.Core.Entities.AuthAccount.UpdatedTime">
             <summary>
-            角色权限id
+            更新时间
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.UserInfo.github_id">
+        <member name="P:MyBlog.Server.Core.Entities.AuthAccount.DeleteMark">
             <summary>
-            Github ID
+            标记删除
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.UserInfo.gitee_id">
+        <member name="P:MyBlog.Server.Core.Entities.AuthAccount.CreatedTime">
             <summary>
-            Gitee ID
+            创建时间
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.UserInfo.roleid_name">
+        <member name="T:MyBlog.Server.Core.Entities.Categories">
             <summary>
-            角色权限名
+            文章栏目表
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.UserInfo.statecode">
+        <member name="P:MyBlog.Server.Core.Entities.Categories.Name">
             <summary>
-            启用
+            栏目名称
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.UserInfo.statecode_name">
+        <member name="P:MyBlog.Server.Core.Entities.Categories.ParentId">
             <summary>
-            启用
+            父级id
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.VersionScriptExecutionLog.name">
+        <member name="P:MyBlog.Server.Core.Entities.Categories.Cover">
             <summary>
-            名称
+            封面图
             </summary>
         </member>
-        <member name="P:MyBlog.Server.Core.Entities.VersionScriptExecutionLog.is_success">
+        <member name="P:MyBlog.Server.Core.Entities.Categories.Status">
             <summary>
-            是否执行成功
+            可用状态
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Module.SysAttrs.SysAttrs.name">
+        <member name="P:MyBlog.Server.Core.Entities.Categories.Sort">
             <summary>
-            名称
+            排序值（值越小越靠前）
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Module.SysAttrs.SysAttrs.code">
+        <member name="P:MyBlog.Server.Core.Entities.Categories.Remark">
             <summary>
-            编码
+            备注
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Module.SysAttrs.SysAttrs.entityid">
+        <member name="P:MyBlog.Server.Core.Entities.Categories.CreatedUserId">
             <summary>
-            实体id
+            创建人
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Module.SysAttrs.SysAttrs.entityid_name">
+        <member name="P:MyBlog.Server.Core.Entities.Categories.DeleteMark">
             <summary>
-            实体名
+            标记删除
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Module.SysAttrs.SysAttrs.attr_type">
+        <member name="P:MyBlog.Server.Core.Entities.Categories.CreatedTime">
             <summary>
-            字段类型
+            创建时间
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Module.SysAttrs.SysAttrs.attr_length">
+        <member name="P:MyBlog.Server.Core.Entities.Categories.Children">
             <summary>
-            字段长度
+            子栏目
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Module.SysAttrs.SysAttrs.isrequire">
+        <member name="T:MyBlog.Server.Core.Entities.Comments">
             <summary>
-            是否必填
+            评论表
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Module.SysAttrs.SysAttrs.default_value">
+        <member name="P:MyBlog.Server.Core.Entities.Comments.ModuleId">
             <summary>
-            默认值
+             对应模块ID（null表留言，0代表友链的评论）
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Module.SysMenu.SysMenu.name">
+        <member name="P:MyBlog.Server.Core.Entities.Comments.RootId">
             <summary>
-            名称
+            顶级楼层评论ID
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Module.SysMenu.SysMenu.parentid">
+        <member name="P:MyBlog.Server.Core.Entities.Comments.ParentId">
             <summary>
-            上级菜单
+            被回复的评论ID
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Module.SysMenu.SysMenu.parentid_name">
+        <member name="P:MyBlog.Server.Core.Entities.Comments.AccountId">
             <summary>
-            上级菜单
+            当前评论人ID
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Module.SysMenu.SysMenu.router">
+        <member name="P:MyBlog.Server.Core.Entities.Comments.ReplyAccountId">
+            <summary>
+            回复人ID
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Comments.Content">
+            <summary>
+            评论内容
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Comments.IP">
+            <summary>
+            Ip地址
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Comments.Geolocation">
+            <summary>
+            IP所属地
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Comments.DeleteMark">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Comments.CreatedTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Entities.CustomConfig">
+            <summary>
+            自定义配置
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.CustomConfig.Name">
+            <summary>
+            配置名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.CustomConfig.Code">
+            <summary>
+            配置唯一编码（类名）
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.CustomConfig.IsMultiple">
+            <summary>
+            是否是多项（集合）
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.CustomConfig.Json">
+            <summary>
+            配置界面设计（json）
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.CustomConfig.AllowCreationEntity">
+            <summary>
+            是否允许创建实体
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.CustomConfig.IsGenerate">
+            <summary>
+            是否已生成实体
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.CustomConfig.Status">
+            <summary>
+            可用状态
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.CustomConfig.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.CustomConfig.CreatedUserId">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.CustomConfig.DeleteMark">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.CustomConfig.CreatedTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Entities.CustomConfigItem">
+            <summary>
+            自定义配置子项
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.CustomConfigItem.ConfigId">
+            <summary>
+            自定义配置Id
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.CustomConfigItem.Json">
+            <summary>
+            配置
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.CustomConfigItem.Status">
+            <summary>
+            可用状态
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.CustomConfigItem.CreatedUserId">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.CustomConfigItem.DeleteMark">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.CustomConfigItem.CreatedTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Entities.FriendLink">
+            <summary>
+            友情链接
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.FriendLink.AppUserId">
+            <summary>
+            博客用户Id
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.FriendLink.SiteName">
+            <summary>
+            网站名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.FriendLink.Link">
+            <summary>
+            网站链接
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.FriendLink.Logo">
+            <summary>
+            网站logo
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.FriendLink.Url">
+            <summary>
+            对方博客友链的地址
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.FriendLink.IsIgnoreCheck">
+            <summary>
+            是否忽略对方站点是否存在本站链接
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.FriendLink.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.FriendLink.Sort">
+            <summary>
+            排序值（值越小越靠前）
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.FriendLink.Status">
+            <summary>
+            可用状态
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.FriendLink.DeleteMark">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.FriendLink.CreatedTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Entities.Interface.IAvailability">
+            <summary>
+            可用状态
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Interface.IAvailability.Status">
+            <summary>
+            可用状态
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Entities.Interface.ICreatedTime">
+            <summary>
+            创建日期
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Interface.ICreatedTime.CreatedTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Interface.ICreatedUserId.CreatedUserId">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Entities.Interface.IEntity">
+            <summary>
+            所有实体类继承
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Entities.Interface.IEntity`1">
+            <summary>
+            
+            </summary>
+            <typeparam name="TKey">主键类型</typeparam>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Interface.IEntity`1.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Entities.Interface.ISoftDelete">
+            <summary>
+            软删除
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Interface.ISoftDelete.DeleteMark">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Entities.Interface.ISortable">
+            <summary>
+            排序
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Interface.ISortable.Sort">
+            <summary>
+            排序值（值越小越靠前）
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Interface.IUpdatedTime.UpdatedTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Entities.Pictures">
+            <summary>
+            相册图片表
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Pictures.AlbumId">
+            <summary>
+            相册Id
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Pictures.Url">
+            <summary>
+            图片地址
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Pictures.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Pictures.CreatedTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Entities.Praise">
+            <summary>
+            点赞表
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Praise.AccountId">
+            <summary>
+            用户ID 
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Praise.ObjectId">
+            <summary>
+            点赞对象ID
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Praise.CreatedTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Entities.SysMenu">
+            <summary>
+            系统菜单表
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysMenu.Name">
+            <summary>
+            菜单名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysMenu.Type">
+            <summary>
+            菜单类型
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysMenu.Code">
+            <summary>
+            权限编码
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysMenu.ParentId">
+            <summary>
+            父级菜单
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysMenu.RouteName">
+            <summary>
+            路由名
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysMenu.Path">
             <summary>
             路由地址
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Module.SysMenu.SysMenu.menu_index">
+        <member name="P:MyBlog.Server.Core.Entities.SysMenu.Component">
             <summary>
-            菜单索引
+            组件路径
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Module.SysMenu.SysMenu.statecode">
+        <member name="P:MyBlog.Server.Core.Entities.SysMenu.Redirect">
             <summary>
-            状态
+            重定向地址
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Module.SysMenu.SysMenu.statecode_name">
+        <member name="P:MyBlog.Server.Core.Entities.SysMenu.Icon">
             <summary>
-            状态名称
+            菜单图标
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Module.SysMenu.SysMenu.icon">
+        <member name="P:MyBlog.Server.Core.Entities.SysMenu.IsIframe">
             <summary>
-            图标
+            是否内嵌页面
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Entity.SysFile.name">
+        <member name="P:MyBlog.Server.Core.Entities.SysMenu.Link">
             <summary>
-            名称
+            外链地址
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Entity.SysFile.objectId">
+        <member name="P:MyBlog.Server.Core.Entities.SysMenu.IsVisible">
             <summary>
-            文件对象
+            是否可见
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Entity.SysFile.real_name">
+        <member name="P:MyBlog.Server.Core.Entities.SysMenu.IsKeepAlive">
             <summary>
-            真实文件名
+            是否缓存
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Entity.SysFile.file_path">
+        <member name="P:MyBlog.Server.Core.Entities.SysMenu.IsFixed">
             <summary>
-            文件路径
+            是否固定
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Entity.SysFile.hash_code">
+        <member name="P:MyBlog.Server.Core.Entities.SysMenu.Status">
             <summary>
-            哈希值
+            可用状态
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Entity.SysFile.file_type">
+        <member name="P:MyBlog.Server.Core.Entities.SysMenu.Sort">
             <summary>
-            文件类型
+            排序值（值越小越靠前）
             </summary>
         </member>
-        <member name="P:Sixpence.Web.Entity.SysFile.content_type">
+        <member name="P:MyBlog.Server.Core.Entities.SysMenu.Remark">
             <summary>
-            内容类型
+            备注
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysMenu.CreatedUserId">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysMenu.DeleteMark">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysMenu.CreatedTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysMenu.Children">
+            <summary>
+            子菜单
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Entities.SysOperationLog">
+            <summary>
+            操作日志
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOperationLog.UserId">
+            <summary>
+            操作用户ID
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOperationLog.LogLevel">
+            <summary>
+            日志级别
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOperationLog.Description">
+            <summary>
+            接口描述
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOperationLog.ControllerName">
+            <summary>
+            控制器名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOperationLog.ActionName">
+            <summary>
+            路由名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOperationLog.HttpMethod">
+            <summary>
+            请求方式
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOperationLog.TraceId">
+            <summary>
+            请求跟踪唯一ID （同一次请求ID相同）
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOperationLog.ThreadId">
+            <summary>
+            线程ID
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOperationLog.UserAgent">
+            <summary>
+            浏览器
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOperationLog.RequestUrl">
+            <summary>
+            请求地址
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOperationLog.RemoteIp">
+            <summary>
+            ip地址
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOperationLog.OsDescription">
+            <summary>
+            用户系统信息
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOperationLog.Elapsed">
+            <summary>
+            耗时（毫秒）
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOperationLog.Location">
+            <summary>
+            Ip归属地
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOperationLog.HttpStatusCode">
+            <summary>
+            http状态码
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOperationLog.Parameter">
+            <summary>
+            请求参数
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOperationLog.Response">
+            <summary>
+            响应结果
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOperationLog.Message">
+            <summary>
+            详细信息
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOperationLog.Exception">
+            <summary>
+            异常信息
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOperationLog.CreatedTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Entities.SysOrganization">
+            <summary>
+            组织机构信息表
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOrganization.ParentId">
+            <summary>
+            父级Id
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOrganization.Name">
+            <summary>
+            部门名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOrganization.Code">
+            <summary>
+            部门编码
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOrganization.Status">
+            <summary>
+            可用状态
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOrganization.Sort">
+            <summary>
+            排序值（值越小越靠前）
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOrganization.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOrganization.CreatedUserId">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOrganization.DeleteMark">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOrganization.CreatedTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysOrganization.Children">
+            <summary>
+            子部门
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Entities.SysRole">
+            <summary>
+            角色表
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRole.Name">
+            <summary>
+            角色名
+            </summary>  
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRole.Code">
+            <summary>
+            角色编码
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRole.Status">
+            <summary>
+            可用状态
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRole.Sort">
+            <summary>
+            排序值
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRole.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRole.DeleteMark">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRole.CreatedTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Entities.SysRoleMenu">
+            <summary>
+            角色权限表
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRoleMenu.RoleId">
+            <summary>
+            角色id
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysRoleMenu.MenuId">
+            <summary>
+            菜单按钮id
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Entities.SysSigninLog">
+            <summary>
+            用户登录日志
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysSigninLog.UserId">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysSigninLog.RemoteIp">
+            <summary>
+            ip地址
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysSigninLog.UserAgent">
+            <summary>
+            浏览器
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysSigninLog.Location">
+            <summary>
+            Ip归属地
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysSigninLog.OsDescription">
+            <summary>
+            用户系统信息
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysSigninLog.Message">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysSigninLog.CreatedTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Entities.SysUser">
+            <summary>
+            系统用户表
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUser.Account">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUser.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUser.Name">
+            <summary>
+            姓名
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUser.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUser.OrgId">
+            <summary>
+            组织机构id
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUser.NickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUser.Birthday">
+            <summary>
+            生日
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUser.Avatar">
+            <summary>
+            头像
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUser.Mobile">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUser.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUser.Status">
+            <summary>
+            可用状态
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUser.LastLoginIp">
+            <summary>
+            最后一次登录IP地址
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUser.LastLoginAddress">
+            <summary>
+            最后一次登录位置
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUser.LastLoginTime">
+            <summary>
+            最后登录时间
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUser.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUser.CreatedUserId">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUser.UpdatedTime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUser.DeleteMark">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUser.LockExpired">
+            <summary>
+            账号锁定过期时间
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUser.CreatedTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUserRole.UserId">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.SysUserRole.RoleId">
+            <summary>
+            角色id
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Entities.Tags">
+            <summary>
+            标签信息表
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Tags.Name">
+            <summary>
+            标签名称
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Tags.Cover">
+            <summary>
+            封面图
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Tags.Color">
+            <summary>
+            标签颜色
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Tags.Status">
+            <summary>
+            可用状态
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Tags.Sort">
+            <summary>
+            排序值（值越小越靠前）
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Tags.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Tags.CreatedUserId">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Tags.DeleteMark">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Tags.CreatedTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Talks.IsTop">
+            <summary>
+            是否置顶
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Talks.Content">
+            <summary>
+            说说正文
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Talks.Images">
+            <summary>
+            图片
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Talks.IsAllowComments">
+            <summary>
+            是否允许评论
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Talks.Status">
+            <summary>
+            可用状态
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Talks.DeleteMark">
+            <summary>
+            标记删除
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Talks.CreatedTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Enum.AuthPlatformType">
+            <summary>
+            登录账户类型
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.AuthPlatformType.Manager">
+            <summary>
+            后台
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.AuthPlatformType.Blog">
+            <summary>
+            博客
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Enum.AvailabilityStatus">
+            <summary>
+            可用状态
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.AvailabilityStatus.Enable">
+            <summary>
+            启用
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.AvailabilityStatus.Disable">
+            <summary>
+            禁用
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Enum.CoverType">
+            <summary>
+            博客封面类型
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.CoverType.Home">
+            <summary>
+            首页封面
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.CoverType.Archives">
+            <summary>
+            归档封面
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.CoverType.Category">
+            <summary>
+            分类封面
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.CoverType.Tag">
+            <summary>
+            标签封面
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.CoverType.Album">
+            <summary>
+            相册封面图
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.CoverType.Talk">
+            <summary>
+            说说封面图
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.CoverType.About">
+            <summary>
+            关于封面图
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.CoverType.Message">
+            <summary>
+            留言封面图
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.CoverType.User">
+            <summary>
+            个人中心封面图
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.CoverType.Link">
+            <summary>
+            友情链接封面图
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.CoverType.TagList">
+            <summary>
+            标签列表封面
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.CoverType.Categories">
+            <summary>
+            分类列表封面
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.CreationType.Original">
+            <summary>
+            原创
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.CreationType.Reprinted">
+            <summary>
+            转载
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.EventType.SignIn">
+            <summary>
+            登录事件
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.EventType.Operation">
+            <summary>
+            操作事件
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.EventType.Exception">
+            <summary>
+            异常事件
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Enum.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.Gender.Male">
+            <summary>
+            男
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.Gender.Female">
+            <summary>
+            女
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.Gender.Unknown">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.MenuType.Catalog">
+            <summary>
+            目录
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.MenuType.Menu">
+            <summary>
+            菜单
+            </summary>
+        </member>
+        <member name="F:MyBlog.Server.Core.Enum.MenuType.Button">
+            <summary>
+            按钮
             </summary>
         </member>
     </members>

@@ -1,52 +1,51 @@
+﻿using MyBlog.Server.Core.Entities.Abstract;
+using MyBlog.Server.Core.Entities.Interface;
+using MyBlog.Server.Core.Enum;
+using System.ComponentModel.DataAnnotations;
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Runtime.Serialization;
+namespace MyBlog.Server.Core.Entities;
 
-
-namespace MyBlog.Server.Core.Entities
+/// <summary>
+/// 角色表
+/// </summary>
+public class SysRole : Entity<long>, IAvailability, ISortable, ISoftDelete, ICreatedTime
 {
- //   [Entity("sys_role", "角色")]
-    public partial class SysRole : EntityBase
-    {
-       
+    /// <summary>
+    /// 角色名
+    /// </summary>  
+    [MaxLength(32)]
+    public string Name { get; set; }
 
-        /// <summary>
-        /// 名称
-        /// </summary>
-        [DataMember, Column, Comment("名称")]
-        public string name { get; set; }
+    /// <summary>
+    /// 角色编码
+    /// </summary>
+    [MaxLength(32)]
+    public string Code { get; set; }
 
-        /// <summary>
-        /// 描述
-        /// </summary>
-        [DataMember, Column, Comment("描述")]
-        public string Comment { get; set; }
+    /// <summary>
+    /// 可用状态
+    /// </summary>
+    public AvailabilityStatus Status { get; set; }
 
-        /// <summary>
-        /// 是否基础角色
-        /// </summary>
-        [DataMember, Column, Comment("是否基础角色")]
-        public bool? is_basic { get; set; }
+    /// <summary>
+    /// 排序值
+    /// </summary>
+    public int Sort { get; set; }
 
-        /// <summary>
-        /// 是否基础角色
-        /// </summary>
-        [DataMember, Column, Comment("是否基础角色")]
-        public string is_basic_name { get; set; }
+    /// <summary>
+    /// 备注
+    /// </summary>
+    //[SugarColumn(Length = 256)] 
+    [MaxLength(256)]
+    public string Remark { get; set; }
 
-        /// <summary>
-        /// 继承角色
-        /// </summary>
-        [DataMember, Column, Comment("继承角色")]
-        public string parent_roleid { get; set; }
+    /// <summary>
+    /// 标记删除
+    /// </summary>
+    public bool DeleteMark { get; set; }
 
-        /// <summary>
-        /// 继承角色
-        /// </summary>
-        [DataMember, Column, Comment("继承角色")]
-        public string parent_roleid_name { get; set; }
-    }
+    /// <summary>
+    /// 创建时间
+    /// </summary>
+    public DateTime CreatedTime { get; set; }
 }
-
