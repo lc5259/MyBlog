@@ -1,4 +1,6 @@
-﻿namespace MyBlog.Server.Core.Entities.Interface;
+﻿using Furion.DatabaseAccessor;
+
+namespace MyBlog.Server.Core.Entities.Interface;
 
 /// <summary>
 /// 

@@ -560,11 +560,6 @@
             创建人
             </summary>
         </member>
-        <member name="T:MyBlog.Server.Core.Entities.Interface.IEntity">
-            <summary>
-            所有实体类继承
-            </summary>
-        </member>
         <member name="T:MyBlog.Server.Core.Entities.Interface.IEntity`1">
             <summary>
             

@@ -11,8 +11,8 @@ using MyBlog.Server.EntityFramework.Core.DbContexts;
 namespace MyBlog.Server.Database.Migrations.Migrations
 {
     [DbContext(typeof(DefaultDbContext))]
-    [Migration("20231229011808_v1.1.3")]
-    partial class v113
+    [Migration("20231229030237_v1.0.0")]
+    partial class v100
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

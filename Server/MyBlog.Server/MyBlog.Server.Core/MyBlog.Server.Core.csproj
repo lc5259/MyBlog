@@ -9,6 +9,11 @@
 	</PropertyGroup>
 
 
+	<ItemGroup>
+	  <Compile Remove="Entities\Interface\IEntity.cs" />
+	</ItemGroup>
+
+
 
 	<ItemGroup>
 		<None Remove="MyBlog.Server.Core.xml" />

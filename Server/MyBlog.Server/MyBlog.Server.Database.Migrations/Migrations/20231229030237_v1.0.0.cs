@@ -4,7 +4,7 @@
 
 namespace MyBlog.Server.Database.Migrations.Migrations
 {
-    public partial class v113 : Migration
+    public partial class v100 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
