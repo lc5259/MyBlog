@@ -6,7 +6,7 @@ namespace MyBlog.Server.Core.Entities;
 /// <summary>
 /// 评论表
 /// </summary>
-public class Comments : Entity<long>, ISoftDelete, ICreatedTime
+public class Comments : DEntityBase<long>, ISoftDelete, ICreatedTime
 {
     /// <summary>
     ///  对应模块ID（null表留言，0代表友链的评论）

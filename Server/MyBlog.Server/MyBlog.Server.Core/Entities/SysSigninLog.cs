@@ -6,7 +6,7 @@ namespace MyBlog.Server.Core.Entities;
 /// <summary>
 /// 用户登录日志
 /// </summary>
-public class SysSigninLog : Entity<long>, ICreatedTime
+public class SysSigninLog : DEntityBase<long>, ICreatedTime
 {
     /// <summary>
     /// 用户ID

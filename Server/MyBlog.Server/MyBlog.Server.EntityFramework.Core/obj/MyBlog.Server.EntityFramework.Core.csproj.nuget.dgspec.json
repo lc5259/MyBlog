@@ -47,6 +47,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "EasyCaching.CSRedis": {
+              "target": "Package",
+              "version": "[1.9.2, )"
+            },
+            "EasyCaching.InMemory": {
+              "target": "Package",
+              "version": "[1.9.2, )"
+            },
             "Furion": {
               "target": "Package",
               "version": "[4.9.1.7, )"
@@ -58,6 +66,10 @@
             "Furion.Extras.ObjectMapper.Mapster": {
               "target": "Package",
               "version": "[4.9.1.7, )"
+            },
+            "Yitter.IdGenerator": {
+              "target": "Package",
+              "version": "[1.0.14, )"
             }
           },
           "imports": [

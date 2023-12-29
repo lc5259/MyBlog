@@ -8,7 +8,7 @@ namespace MyBlog.Server.Core.Entities;
 /// <summary>
 /// 标签信息表
 /// </summary>
-public class Tags : Entity<long>, ISortable, IAvailability, ICreatedUserId, ISoftDelete, ICreatedTime
+public class Tags : DEntityBase<long>, ISortable, IAvailability, ICreatedUserId, ISoftDelete, ICreatedTime
 {
     /// <summary>
     /// 标签名称

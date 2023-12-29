@@ -5,7 +5,7 @@ namespace MyBlog.Server.Core.Entities;
 /// <summary>
 /// 角色权限表
 /// </summary>
-public class SysRoleMenu : Entity<long>
+public class SysRoleMenu : DEntityBase<long>
 {
     /// <summary>
     /// 角色id

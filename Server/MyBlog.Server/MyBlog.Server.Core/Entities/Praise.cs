@@ -5,7 +5,7 @@ namespace MyBlog.Server.Core.Entities;
 /// <summary>
 /// 点赞表
 /// </summary>
-public class Praise : Entity<long>, ICreatedTime
+public class Praise : DEntityBase<long>, ICreatedTime
 {
     /// <summary>
     /// 用户ID 

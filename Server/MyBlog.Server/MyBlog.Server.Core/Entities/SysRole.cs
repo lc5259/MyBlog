@@ -8,7 +8,7 @@ namespace MyBlog.Server.Core.Entities;
 /// <summary>
 /// 角色表
 /// </summary>
-public class SysRole : Entity<long>, IAvailability, ISortable, ISoftDelete, ICreatedTime
+public class SysRole : DEntityBase<long>, IAvailability, ISortable, ISoftDelete, ICreatedTime
 {
     /// <summary>
     /// 角色名

@@ -2,7 +2,7 @@
 
 namespace MyBlog.Server.Core.Entities;
 
-public class SysUserRole : Entity<long>
+public class SysUserRole : DEntityBase<long>
 {
     /// <summary>
     /// 用户id

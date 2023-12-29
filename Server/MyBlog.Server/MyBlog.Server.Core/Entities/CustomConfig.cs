@@ -9,7 +9,7 @@ namespace MyBlog.Server.Core.Entities;
 /// <summary>
 /// 自定义配置
 /// </summary>
-public class CustomConfig : Entity<long>, IAvailability, ICreatedUserId, ISoftDelete, ICreatedTime
+public class CustomConfig : DEntityBase<long>, IAvailability, ICreatedUserId, ISoftDelete, ICreatedTime
 {
     /// <summary>
     /// 配置名称

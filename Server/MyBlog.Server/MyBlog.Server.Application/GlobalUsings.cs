@@ -14,3 +14,5 @@ global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.CodeAnalysis;
 global using Microsoft.EntityFrameworkCore;
 global using System.ComponentModel.DataAnnotations;
+global using MyBlog.Server.Core.Shared;
+global using MyBlog.Server.Core.EFCore.Pager; 

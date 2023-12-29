@@ -8,7 +8,7 @@ namespace MyBlog.Server.Core.Entities;
 /// <summary>
 /// 友情链接
 /// </summary>
-public class FriendLink : Entity<long>, ISortable, IAvailability, ISoftDelete, ICreatedTime
+public class FriendLink : DEntityBase<long>, ISortable, IAvailability, ISoftDelete, ICreatedTime
 {
     /// <summary>
     /// 博客用户Id

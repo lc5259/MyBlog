@@ -20,13 +20,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="EasyCaching.CSRedis" Version="1.9.2" />
+		<PackageReference Include="EasyCaching.InMemory" Version="1.9.2" />
 		<PackageReference Include="Furion" Version="4.9.1.7" />
 		<PackageReference Include="Furion.Extras.Authentication.JwtBearer" Version="4.9.1.7" />
 		<PackageReference Include="Furion.Extras.ObjectMapper.Mapster" Version="4.9.1.7" />
+		<PackageReference Include="Yitter.IdGenerator" Version="1.0.14" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Entities\" />
+	  <Folder Include="EFCore\" />
 	</ItemGroup>
 
 </Project>

@@ -1,10 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "508fFCmcaY4Hsk6TzfAzDAQhKAkXQdYpE4Z3JgHOAb5YAA7xKvpB1ZbAgu/C4sLTUtyuzk+/ADHpzu2eskmRVw==",
+  "dgSpecHash": "Mx73zyrpLmlpqfi+tUEpHToggFRyeqOvZ70PyOqgD2MfeOO/ZA2vTiqr/K5Di2dTPpEf271cSK8Bk1JIz+WYcQ==",
   "success": true,
   "projectFilePath": "C:\\project\\MyBlog\\MyBlog\\Server\\MyBlog.Server\\MyBlog.Server.Application\\MyBlog.Server.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\liu Chuang\\.nuget\\packages\\ben.demystifier\\0.4.1\\ben.demystifier.0.4.1.nupkg.sha512",
+    "C:\\Users\\liu Chuang\\.nuget\\packages\\csrediscore\\3.8.671\\csrediscore.3.8.671.nupkg.sha512",
+    "C:\\Users\\liu Chuang\\.nuget\\packages\\easycaching.core\\1.9.2\\easycaching.core.1.9.2.nupkg.sha512",
+    "C:\\Users\\liu Chuang\\.nuget\\packages\\easycaching.csredis\\1.9.2\\easycaching.csredis.1.9.2.nupkg.sha512",
+    "C:\\Users\\liu Chuang\\.nuget\\packages\\easycaching.inmemory\\1.9.2\\easycaching.inmemory.1.9.2.nupkg.sha512",
     "C:\\Users\\liu Chuang\\.nuget\\packages\\furion\\4.9.1.7\\furion.4.9.1.7.nupkg.sha512",
     "C:\\Users\\liu Chuang\\.nuget\\packages\\furion.extras.authentication.jwtbearer\\4.9.1.7\\furion.extras.authentication.jwtbearer.4.9.1.7.nupkg.sha512",
     "C:\\Users\\liu Chuang\\.nuget\\packages\\furion.extras.dependencymodel.codeanalysis\\4.9.1.7\\furion.extras.dependencymodel.codeanalysis.4.9.1.7.nupkg.sha512",
@@ -32,12 +36,14 @@
     "C:\\Users\\liu Chuang\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\liu Chuang\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "C:\\Users\\liu Chuang\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\liu Chuang\\.nuget\\packages\\microsoft.extensions.configuration.binder\\6.0.0\\microsoft.extensions.configuration.binder.6.0.0.nupkg.sha512",
     "C:\\Users\\liu Chuang\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.1\\microsoft.extensions.dependencyinjection.6.0.1.nupkg.sha512",
     "C:\\Users\\liu Chuang\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\liu Chuang\\.nuget\\packages\\microsoft.extensions.dependencymodel\\6.0.0\\microsoft.extensions.dependencymodel.6.0.0.nupkg.sha512",
     "C:\\Users\\liu Chuang\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",
     "C:\\Users\\liu Chuang\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\liu Chuang\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\liu Chuang\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\6.0.0\\microsoft.extensions.options.configurationextensions.6.0.0.nupkg.sha512",
     "C:\\Users\\liu Chuang\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\liu Chuang\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.10.0\\microsoft.identitymodel.jsonwebtokens.6.10.0.nupkg.sha512",
     "C:\\Users\\liu Chuang\\.nuget\\packages\\microsoft.identitymodel.logging\\6.10.0\\microsoft.identitymodel.logging.6.10.0.nupkg.sha512",
@@ -106,7 +112,9 @@
     "C:\\Users\\liu Chuang\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
     "C:\\Users\\liu Chuang\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512",
     "C:\\Users\\liu Chuang\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
-    "C:\\Users\\liu Chuang\\.nuget\\packages\\system.threading.tasks.parallel\\4.3.0\\system.threading.tasks.parallel.4.3.0.nupkg.sha512"
+    "C:\\Users\\liu Chuang\\.nuget\\packages\\system.threading.tasks.parallel\\4.3.0\\system.threading.tasks.parallel.4.3.0.nupkg.sha512",
+    "C:\\Users\\liu Chuang\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\liu Chuang\\.nuget\\packages\\yitter.idgenerator\\1.0.14\\yitter.idgenerator.1.0.14.nupkg.sha512"
   ],
   "logs": []
 }

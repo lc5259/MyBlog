@@ -8,7 +8,7 @@ namespace MyBlog.Server.Core.Entities;
 /// <summary>
 /// 相册表
 /// </summary>
-public class Albums : Entity<long>, IAvailability, ISortable, ICreatedUserId, ISoftDelete, ICreatedTime
+public class Albums : DEntityBase<long>, IAvailability, ISortable, ICreatedUserId, ISoftDelete, ICreatedTime
 {
     /// <summary>
     /// 相册名称

@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MyBlog.Server.Core.Entities;
 
-public class Talks : Entity<long>, ISoftDelete, ICreatedTime, IAvailability
+public class Talks : DEntityBase<long>, ISoftDelete, ICreatedTime, IAvailability
 {
     /// <summary>
     /// 是否置顶

@@ -9,7 +9,7 @@ namespace MyBlog.Server.Core.Entities;
 /// <summary>
 /// 系统菜单表
 /// </summary>
-public class SysMenu : Entity<long>, IAvailability, ISortable, ICreatedUserId, ISoftDelete, ICreatedTime
+public class SysMenu : DEntityBase<long>, IAvailability, ISortable, ICreatedUserId, ISoftDelete, ICreatedTime
 {
     /// <summary>
     /// 菜单名称

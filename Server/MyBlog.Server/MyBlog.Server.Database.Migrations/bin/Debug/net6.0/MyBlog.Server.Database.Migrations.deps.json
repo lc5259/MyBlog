@@ -45,6 +45,55 @@
           }
         }
       },
+      "CSRedisCore/3.8.671": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "System.ValueTuple": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/CSRedisCore.dll": {
+            "assemblyVersion": "3.8.671.0",
+            "fileVersion": "3.8.671.0"
+          }
+        }
+      },
+      "EasyCaching.Core/1.9.2": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "6.0.1",
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "6.0.0",
+          "System.Diagnostics.DiagnosticSource": "6.0.1"
+        },
+        "runtime": {
+          "lib/net6.0/EasyCaching.Core.dll": {
+            "assemblyVersion": "1.9.2.0",
+            "fileVersion": "1.9.2.0"
+          }
+        }
+      },
+      "EasyCaching.CSRedis/1.9.2": {
+        "dependencies": {
+          "CSRedisCore": "3.8.671",
+          "EasyCaching.Core": "1.9.2"
+        },
+        "runtime": {
+          "lib/net6.0/EasyCaching.CSRedis.dll": {
+            "assemblyVersion": "1.9.2.0",
+            "fileVersion": "1.9.2.0"
+          }
+        }
+      },
+      "EasyCaching.InMemory/1.9.2": {
+        "dependencies": {
+          "EasyCaching.Core": "1.9.2"
+        },
+        "runtime": {
+          "lib/net6.0/EasyCaching.InMemory.dll": {
+            "assemblyVersion": "1.9.2.0",
+            "fileVersion": "1.9.2.0"
+          }
+        }
+      },
       "Furion/4.9.1.7": {
         "dependencies": {
           "Furion.Extras.DependencyModel.CodeAnalysis": "4.9.1.7",
@@ -557,6 +606,11 @@
           "Microsoft.Extensions.Primitives": "6.0.0"
         }
       },
+      "Microsoft.Extensions.Configuration.Binder/6.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0"
+        }
+      },
       "Microsoft.Extensions.DependencyInjection/6.0.1": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
@@ -598,6 +652,15 @@
       "Microsoft.Extensions.Options/6.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Primitives": "6.0.0"
+        }
+      },
+      "Microsoft.Extensions.Options.ConfigurationExtensions/6.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Configuration.Binder": "6.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Options": "6.0.0",
           "Microsoft.Extensions.Primitives": "6.0.0"
         }
       },
@@ -1761,6 +1824,7 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "System.ValueTuple/4.5.0": {},
       "System.Windows.Extensions/4.7.0": {
         "dependencies": {
           "System.Drawing.Common": "4.7.0"
@@ -1829,11 +1893,22 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
+      "Yitter.IdGenerator/1.0.14": {
+        "runtime": {
+          "lib/netstandard2.0/Yitter.IdGenerator.dll": {
+            "assemblyVersion": "1.0.14.0",
+            "fileVersion": "1.0.14.0"
+          }
+        }
+      },
       "MyBlog.Server.Core/1.0.0": {
         "dependencies": {
+          "EasyCaching.CSRedis": "1.9.2",
+          "EasyCaching.InMemory": "1.9.2",
           "Furion": "4.9.1.7",
           "Furion.Extras.Authentication.JwtBearer": "4.9.1.7",
-          "Furion.Extras.ObjectMapper.Mapster": "4.9.1.7"
+          "Furion.Extras.ObjectMapper.Mapster": "4.9.1.7",
+          "Yitter.IdGenerator": "1.0.14"
         },
         "runtime": {
           "MyBlog.Server.Core.dll": {}
@@ -1870,6 +1945,34 @@
       "sha512": "sha512-zanbjWC0Y05gbx4eGXkzVycOQqVOFVeCjVsDSyuao9P4mtN1w3WxxTo193NGC7j3o2u3AJRswaoC6hEbnGACnQ==",
       "path": "castle.core/4.4.1",
       "hashPath": "castle.core.4.4.1.nupkg.sha512"
+    },
+    "CSRedisCore/3.8.671": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HnQMRcNtEQz9aDxIFb2fjYP0ll7DlVFMRQZI5Y9hXCW3zdRhi9P2cqwI49IL4TN+YPI1MfFeHatjVB6EPZOAlw==",
+      "path": "csrediscore/3.8.671",
+      "hashPath": "csrediscore.3.8.671.nupkg.sha512"
+    },
+    "EasyCaching.Core/1.9.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-26gxpME2bJpOgF5H/ih3Xi48+GvpRHcPs0ifUwL3IUv3ya7G1rURxRz0LzuhiYQ3YtzpR5VgdK1PDX+tIrq69w==",
+      "path": "easycaching.core/1.9.2",
+      "hashPath": "easycaching.core.1.9.2.nupkg.sha512"
+    },
+    "EasyCaching.CSRedis/1.9.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bzdwav3l32N7h6t5wZoF0+CZsUot2jPvExlBS5UgoyOKDsKxXIrgEgy4msY1zPOMfOelcukNmEyORDsL4WzhYQ==",
+      "path": "easycaching.csredis/1.9.2",
+      "hashPath": "easycaching.csredis.1.9.2.nupkg.sha512"
+    },
+    "EasyCaching.InMemory/1.9.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-So06HEl/ap2TyPLfEpEISca/X+/xvYFBKj8D3Fg6RTEGHIDMjhCnkvuemIYzh7js43Af2xEVh33iCdgYbub3lg==",
+      "path": "easycaching.inmemory/1.9.2",
+      "hashPath": "easycaching.inmemory.1.9.2.nupkg.sha512"
     },
     "Furion/4.9.1.7": {
       "type": "package",
@@ -2088,6 +2191,13 @@
       "path": "microsoft.extensions.configuration.abstractions/6.0.0",
       "hashPath": "microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512"
     },
+    "Microsoft.Extensions.Configuration.Binder/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-b3ErKzND8LIC7o08QAVlKfaEIYEvLJbtmVbFZVBRXeu9YkKfSSzLZfR1SUfQPBIy9mKLhEtJgGYImkcMNaKE0A==",
+      "path": "microsoft.extensions.configuration.binder/6.0.0",
+      "hashPath": "microsoft.extensions.configuration.binder.6.0.0.nupkg.sha512"
+    },
     "Microsoft.Extensions.DependencyInjection/6.0.1": {
       "type": "package",
       "serviceable": true,
@@ -2129,6 +2239,13 @@
       "sha512": "sha512-dzXN0+V1AyjOe2xcJ86Qbo233KHuLEY0njf/P2Kw8SfJU+d45HNS2ctJdnEnrWbM9Ye2eFgaC5Mj9otRMU6IsQ==",
       "path": "microsoft.extensions.options/6.0.0",
       "hashPath": "microsoft.extensions.options.6.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Options.ConfigurationExtensions/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bXWINbTn0vC0FYc9GaQTISbxhQLAMrvtbuvD9N6JelEaIS/Pr62wUCinrq5bf1WRBGczt1v4wDhxFtVFNcMdUQ==",
+      "path": "microsoft.extensions.options.configurationextensions/6.0.0",
+      "hashPath": "microsoft.extensions.options.configurationextensions.6.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Primitives/6.0.0": {
       "type": "package",
@@ -2998,6 +3115,13 @@
       "path": "system.threading.timer/4.3.0",
       "hashPath": "system.threading.timer.4.3.0.nupkg.sha512"
     },
+    "System.ValueTuple/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
+      "path": "system.valuetuple/4.5.0",
+      "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
+    },
     "System.Windows.Extensions/4.7.0": {
       "type": "package",
       "serviceable": true,
@@ -3025,6 +3149,13 @@
       "sha512": "sha512-lJ8AxvkX7GQxpC6GFCeBj8ThYVyQczx2+f/cWHJU8tjS7YfI6Cv6bon70jVEgs2CiFbmmM8b9j1oZVx0dSI2Ww==",
       "path": "system.xml.xmldocument/4.3.0",
       "hashPath": "system.xml.xmldocument.4.3.0.nupkg.sha512"
+    },
+    "Yitter.IdGenerator/1.0.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-F4nOJ7Geq41vgNWX9E6/vkxRzFInACGpDp4Kad2mA2WIKhEwgPyE9FpulBAuEmDByrfHHz6mOII3IIeLJAh91g==",
+      "path": "yitter.idgenerator/1.0.14",
+      "hashPath": "yitter.idgenerator.1.0.14.nupkg.sha512"
     },
     "MyBlog.Server.Core/1.0.0": {
       "type": "project",

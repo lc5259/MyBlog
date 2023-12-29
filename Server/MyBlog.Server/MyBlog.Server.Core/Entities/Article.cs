@@ -9,7 +9,7 @@ namespace MyBlog.Server.Core.Entities;
 /// <summary>
 /// 文章表
 /// </summary>
-public class Article : Entity<long>, IAvailability, ISortable, ISoftDelete, IUpdatedTime, ICreatedUserId, ICreatedTime
+public class Article : DEntityBase<long>, IAvailability, ISortable, ISoftDelete, IUpdatedTime, ICreatedUserId, ICreatedTime
 {
     /// <summary>
     /// 标题

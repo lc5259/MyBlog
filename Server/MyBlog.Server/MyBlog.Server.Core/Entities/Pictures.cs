@@ -7,7 +7,7 @@ namespace MyBlog.Server.Core.Entities;
 /// <summary>
 /// 相册图片表
 /// </summary>
-public class Pictures : Entity<long>, ICreatedTime
+public class Pictures : DEntityBase<long>, ICreatedTime
 {
     /// <summary>
     /// 相册Id

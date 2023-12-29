@@ -39,6 +39,75 @@
           }
         }
       },
+      "CSRedisCore/3.8.671": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/CSRedisCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/CSRedisCore.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "EasyCaching.Core/1.9.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "6.0.0",
+          "Microsoft.Extensions.Logging": "6.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "6.0.0",
+          "System.Diagnostics.DiagnosticSource": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/EasyCaching.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/EasyCaching.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "EasyCaching.CSRedis/1.9.2": {
+        "type": "package",
+        "dependencies": {
+          "CSRedisCore": "3.8.671",
+          "EasyCaching.Core": "1.9.2"
+        },
+        "compile": {
+          "lib/net6.0/EasyCaching.CSRedis.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/EasyCaching.CSRedis.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "EasyCaching.InMemory/1.9.2": {
+        "type": "package",
+        "dependencies": {
+          "EasyCaching.Core": "1.9.2"
+        },
+        "compile": {
+          "lib/net6.0/EasyCaching.InMemory.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/EasyCaching.InMemory.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Furion/4.9.1.7": {
         "type": "package",
         "dependencies": {
@@ -744,6 +813,22 @@
           }
         }
       },
+      "Microsoft.Extensions.Configuration.Binder/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.DependencyInjection/6.0.1": {
         "type": "package",
         "dependencies": {
@@ -849,6 +934,26 @@
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.Extensions.Options.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.Options.ConfigurationExtensions/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Configuration.Binder": "6.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Options": "6.0.0",
+          "Microsoft.Extensions.Primitives": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll": {
             "related": ".xml"
           }
         }
@@ -3055,6 +3160,15 @@
           }
         }
       },
+      "System.ValueTuple/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Windows.Extensions/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -3153,6 +3267,15 @@
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
         }
       },
+      "Yitter.IdGenerator/1.0.14": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Yitter.IdGenerator.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Yitter.IdGenerator.dll": {}
+        }
+      },
       "MyBlog.Server.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -3170,9 +3293,12 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "EasyCaching.CSRedis": "1.9.2",
+          "EasyCaching.InMemory": "1.9.2",
           "Furion": "4.9.1.7",
           "Furion.Extras.Authentication.JwtBearer": "4.9.1.7",
-          "Furion.Extras.ObjectMapper.Mapster": "4.9.1.7"
+          "Furion.Extras.ObjectMapper.Mapster": "4.9.1.7",
+          "Yitter.IdGenerator": "1.0.14"
         },
         "compile": {
           "bin/placeholder/MyBlog.Server.Core.dll": {}
@@ -3265,6 +3391,74 @@
         "lib/netstandard1.5/Castle.Core.dll",
         "lib/netstandard1.5/Castle.Core.xml",
         "readme.txt"
+      ]
+    },
+    "CSRedisCore/3.8.671": {
+      "sha512": "HnQMRcNtEQz9aDxIFb2fjYP0ll7DlVFMRQZI5Y9hXCW3zdRhi9P2cqwI49IL4TN+YPI1MfFeHatjVB6EPZOAlw==",
+      "type": "package",
+      "path": "csrediscore/3.8.671",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "csrediscore.3.8.671.nupkg.sha512",
+        "csrediscore.nuspec",
+        "lib/net40/CSRedisCore.dll",
+        "lib/net40/CSRedisCore.xml",
+        "lib/net45/CSRedisCore.dll",
+        "lib/net45/CSRedisCore.xml",
+        "lib/netstandard2.0/CSRedisCore.dll",
+        "lib/netstandard2.0/CSRedisCore.xml"
+      ]
+    },
+    "EasyCaching.Core/1.9.2": {
+      "sha512": "26gxpME2bJpOgF5H/ih3Xi48+GvpRHcPs0ifUwL3IUv3ya7G1rURxRz0LzuhiYQ3YtzpR5VgdK1PDX+tIrq69w==",
+      "type": "package",
+      "path": "easycaching.core/1.9.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "easycaching.core.1.9.2.nupkg.sha512",
+        "easycaching.core.nuspec",
+        "lib/net6.0/EasyCaching.Core.dll",
+        "lib/net6.0/EasyCaching.Core.xml",
+        "lib/netstandard2.0/EasyCaching.Core.dll",
+        "lib/netstandard2.0/EasyCaching.Core.xml",
+        "nuget-icon.png"
+      ]
+    },
+    "EasyCaching.CSRedis/1.9.2": {
+      "sha512": "bzdwav3l32N7h6t5wZoF0+CZsUot2jPvExlBS5UgoyOKDsKxXIrgEgy4msY1zPOMfOelcukNmEyORDsL4WzhYQ==",
+      "type": "package",
+      "path": "easycaching.csredis/1.9.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "easycaching.csredis.1.9.2.nupkg.sha512",
+        "easycaching.csredis.nuspec",
+        "lib/net6.0/EasyCaching.CSRedis.dll",
+        "lib/net6.0/EasyCaching.CSRedis.xml",
+        "lib/netstandard2.0/EasyCaching.CSRedis.dll",
+        "lib/netstandard2.0/EasyCaching.CSRedis.xml",
+        "nuget-icon.png"
+      ]
+    },
+    "EasyCaching.InMemory/1.9.2": {
+      "sha512": "So06HEl/ap2TyPLfEpEISca/X+/xvYFBKj8D3Fg6RTEGHIDMjhCnkvuemIYzh7js43Af2xEVh33iCdgYbub3lg==",
+      "type": "package",
+      "path": "easycaching.inmemory/1.9.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "easycaching.inmemory.1.9.2.nupkg.sha512",
+        "easycaching.inmemory.nuspec",
+        "lib/net6.0/EasyCaching.InMemory.dll",
+        "lib/net6.0/EasyCaching.InMemory.xml",
+        "lib/netstandard2.0/EasyCaching.InMemory.dll",
+        "lib/netstandard2.0/EasyCaching.InMemory.xml",
+        "nuget-icon.png"
       ]
     },
     "Furion/4.9.1.7": {
@@ -4911,6 +5105,25 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Microsoft.Extensions.Configuration.Binder/6.0.0": {
+      "sha512": "b3ErKzND8LIC7o08QAVlKfaEIYEvLJbtmVbFZVBRXeu9YkKfSSzLZfR1SUfQPBIy9mKLhEtJgGYImkcMNaKE0A==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.binder/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/net461/Microsoft.Extensions.Configuration.Binder.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.xml",
+        "microsoft.extensions.configuration.binder.6.0.0.nupkg.sha512",
+        "microsoft.extensions.configuration.binder.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "Microsoft.Extensions.DependencyInjection/6.0.1": {
       "sha512": "vWXPg3HJQIpZkENn1KWq8SfbqVujVD7S7vIAyFXXqK5xkf1Vho+vG0bLBCHxU36lD1cLLtmGpfYf0B3MYFi9tQ==",
       "type": "package",
@@ -5071,6 +5284,25 @@
         "lib/netstandard2.1/Microsoft.Extensions.Options.xml",
         "microsoft.extensions.options.6.0.0.nupkg.sha512",
         "microsoft.extensions.options.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Options.ConfigurationExtensions/6.0.0": {
+      "sha512": "bXWINbTn0vC0FYc9GaQTISbxhQLAMrvtbuvD9N6JelEaIS/Pr62wUCinrq5bf1WRBGczt1v4wDhxFtVFNcMdUQ==",
+      "type": "package",
+      "path": "microsoft.extensions.options.configurationextensions/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Extensions.Options.ConfigurationExtensions.dll",
+        "lib/net461/Microsoft.Extensions.Options.ConfigurationExtensions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Options.ConfigurationExtensions.xml",
+        "microsoft.extensions.options.configurationextensions.6.0.0.nupkg.sha512",
+        "microsoft.extensions.options.configurationextensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -9990,6 +10222,50 @@
         "system.threading.timer.nuspec"
       ]
     },
+    "System.ValueTuple/4.5.0": {
+      "sha512": "okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
+      "type": "package",
+      "path": "system.valuetuple/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.ValueTuple.dll",
+        "lib/net461/System.ValueTuple.xml",
+        "lib/net47/System.ValueTuple.dll",
+        "lib/net47/System.ValueTuple.xml",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.ValueTuple.dll",
+        "lib/netstandard1.0/System.ValueTuple.xml",
+        "lib/netstandard2.0/_._",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
+        "lib/uap10.0.16299/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.ValueTuple.dll",
+        "ref/net47/System.ValueTuple.dll",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard2.0/_._",
+        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "ref/uap10.0.16299/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.valuetuple.4.5.0.nupkg.sha512",
+        "system.valuetuple.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Windows.Extensions/4.7.0": {
       "sha512": "CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "type": "package",
@@ -10190,6 +10466,18 @@
         "ref/xamarinwatchos10/_._",
         "system.xml.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xmldocument.nuspec"
+      ]
+    },
+    "Yitter.IdGenerator/1.0.14": {
+      "sha512": "F4nOJ7Geq41vgNWX9E6/vkxRzFInACGpDp4Kad2mA2WIKhEwgPyE9FpulBAuEmDByrfHHz6mOII3IIeLJAh91g==",
+      "type": "package",
+      "path": "yitter.idgenerator/1.0.14",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Yitter.IdGenerator.dll",
+        "yitter.idgenerator.1.0.14.nupkg.sha512",
+        "yitter.idgenerator.nuspec"
       ]
     },
     "MyBlog.Server.Application/1.0.0": {

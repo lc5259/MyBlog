@@ -9,7 +9,7 @@ namespace MyBlog.Server.Core.Entities;
 /// <summary>
 /// 操作日志
 /// </summary>
-public class SysOperationLog : Entity<long>, ICreatedTime
+public class SysOperationLog : DEntityBase<long>, ICreatedTime
 {
     /// <summary>
     /// 操作用户ID

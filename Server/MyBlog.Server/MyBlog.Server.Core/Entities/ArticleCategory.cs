@@ -4,7 +4,7 @@ namespace MyBlog.Server.Core.Entities;
 /// <summary>
 /// 文章所属栏目表
 /// </summary>
-public class ArticleCategory : Entity<long>
+public class ArticleCategory : DEntityBase<long>
 {
     /// <summary>
     /// 文章Id

@@ -19,16 +19,71 @@
             返回数据
             </summary>
         </member>
+        <member name="P:MyBlog.Server.Core.EFCore.Pager.IPagination.PageNo">
+            <summary>
+            当前页码
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.EFCore.Pager.IPagination.PageSize">
+            <summary>
+            页码容量
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.EFCore.Pager.PageResult`1.PageNo">
+            <summary>
+            当前页
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.EFCore.Pager.PageResult`1.PageSize">
+            <summary>
+            页容量
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.EFCore.Pager.PageResult`1.Pages">
+            <summary>
+            总页数
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.EFCore.Pager.PageResult`1.Total">
+            <summary>
+            总条数
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.EFCore.Pager.PageResult`1.Rows">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.EFCore.Pager.Pagination">
+            <summary>
+            分页查询基类
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.EFCore.Pager.Pagination.PageNo">
+            <summary>
+            当前页码
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.EFCore.Pager.Pagination.PageSize">
+            <summary>
+            页码容量
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Entities.Abstract.DEntityBase`1">
+            <summary>
+            自定义实体基类
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Entities.Abstract.PrivateDEntityBase`1.Id">
+            <summary>
+            主键Id
+            </summary>
+        </member>
         <member name="T:MyBlog.Server.Core.Entities.Abstract.Entity`1">
             <summary>
             表实体继承
             </summary>
             <typeparam name="TKey">主键类型</typeparam>
-        </member>
-        <member name="P:MyBlog.Server.Core.Entities.Abstract.Entity`1.Id">
-            <summary>
-            主键
-            </summary>
         </member>
         <member name="T:MyBlog.Server.Core.Entities.Albums">
             <summary>
@@ -1359,6 +1414,41 @@
         <member name="F:MyBlog.Server.Core.Enum.MenuType.Button">
             <summary>
             按钮
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Shared.AvailabilityDto.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Shared.KeyDto.Id">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Shared.SelectOutput">
+            <summary>
+            下拉框
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Shared.SelectOutput.Label">
+            <summary>
+            文本
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Shared.SelectOutput.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="T:MyBlog.Server.Core.Shared.TreeSelectOutput">
+            <summary>
+            树形下拉框
+            </summary>
+        </member>
+        <member name="P:MyBlog.Server.Core.Shared.TreeSelectOutput.Children">
+            <summary>
+            子选项
             </summary>
         </member>
     </members>

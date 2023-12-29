@@ -8,7 +8,7 @@ namespace MyBlog.Server.Core.Entities;
 /// <summary>
 /// 系统用户表
 /// </summary>
-public class SysUser : Entity<long>, IUpdatedTime, IAvailability, ICreatedUserId, ISoftDelete, ICreatedTime
+public class SysUser : DEntityBase<long>, IUpdatedTime, IAvailability, ICreatedUserId, ISoftDelete, ICreatedTime
 {
     /// <summary>
     /// 用户名
