@@ -17,7 +17,7 @@ public class SysUserInfoOutput
     /// <summary>
     /// 生日
     /// </summary>
-    public DateOnly? Birthday { get; set; }
+    public DateTime? Birthday { get; set; }
     /// <summary>
     /// 邮箱
     /// </summary>

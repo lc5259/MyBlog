@@ -6,7 +6,10 @@ using MyBlog.Server.Application.Config;
 using MyBlog.Server.Application.Menu;
 using MyBlog.Server.Application.User.Dto;
 using MyBlog.Server.Core;
+using MyBlog.Server.Core.Config;
 using MyBlog.Server.Core.Entities;
+using MyBlog.Server.Core.Extensions;
+
 //using MyBlog.Server.Core.Entities;
 using System;
 using System.Collections.Generic;
@@ -15,7 +18,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
-using Yitter.IdGenerator;
+
 
 namespace MyBlog.Server.Application.User
 {
@@ -64,16 +67,22 @@ namespace MyBlog.Server.Application.User
             if (dto.OrgId.HasValue)
             {
                 orgIdList.Add(dto.OrgId.Value);
-                var list = await _orgRepository.AsQueryable().ToChildListAsync(x => x.ParentId, dto.OrgId);
+
+                var list = await _orgRepository.AsQueryable()
+                             .Include(u => u.Children)
+                             .Where(u => u.Id == dto.OrgId)
+                             .ToListAsync();
+
+                //var list = await _orgRepository.AsQueryable().ToChildListAsync(x => x.ParentId, dto.OrgId);
 
                 orgIdList.AddRange(list.Select(x => x.Id));
             }
             return await _repository.AsQueryable()
                 .Where(x => x.Id > 1)
-                .WhereIF(!string.IsNullOrWhiteSpace(dto.Name), x => x.Name.Contains(dto.Name))
-                .WhereIF(!string.IsNullOrWhiteSpace(dto.Account), x => x.Account.Contains(dto.Account))
-                .WhereIF(!string.IsNullOrWhiteSpace(dto.Mobile), x => x.Mobile.Contains(dto.Mobile))
-                .WhereIF(orgIdList.Any(), x => orgIdList.Contains(x.OrgId))
+                .Where(!string.IsNullOrWhiteSpace(dto.Name), x => x.Name.Contains(dto.Name))
+                .Where(!string.IsNullOrWhiteSpace(dto.Account), x => x.Account.Contains(dto.Account))
+                .Where(!string.IsNullOrWhiteSpace(dto.Mobile), x => x.Mobile.Contains(dto.Mobile))
+                .Where(orgIdList.Any(), x => orgIdList.Contains(x.OrgId))
                 .Select(x => new SysUserPageOutput
                 {
                     Name = x.Name,
@@ -86,7 +95,9 @@ namespace MyBlog.Server.Application.User
                     CreatedTime = x.CreatedTime,
                     Email = x.Email,
                     Id = x.Id
-                }).ToPagedListAsync(dto);
+                })
+                .ToPagedListAsync();
+            //这里先不做映射mapper ，感觉用映射会麻烦
         }
 
         /// <summary>
@@ -96,20 +107,24 @@ namespace MyBlog.Server.Application.User
         /// <returns></returns>
         [UnitOfWork, HttpPost("add")]
         [DisplayName("添加系统用户")]
-        public async Task AddUser(AddSysUserInput dto)
+        public async Task AddUser(AddSysUserInput dto) 
         {
             var user = dto.Adapt<SysUser>();
             user.Id = _idGenerator.NextId();
             string encode = _idGenerator.Encode(user.Id);
-            var setting = await _customConfigService.Get<SysSecuritySetting>();
-            user.Password = MD5Encryption.Encrypt(encode + (setting?.Password ?? "123456"));
-            var roles = dto.Roles.Select(x => new SysUserRole()
-            {
+            var setting =await this._customConfigService.Get<SysSecuritySetting>();
+            user.Password = MD5Encryption.Encrypt(encode+ "123456");
+
+            var roles = dto.Roles.Select(x => new SysUserRole
+            { 
                 RoleId = x,
                 UserId = user.Id
             }).ToList();
-            await _repository.InsertAsync(user);
-            await _userRoleRepository.InsertRangeAsync(roles);
+
+          
+            await this._repository.InsertAsync(user);
+            await this._userRoleRepository.InsertAsync(roles);
+
         }
 
         /// <summary>
@@ -119,22 +134,7 @@ namespace MyBlog.Server.Application.User
         /// <returns></returns>
         [DisplayName("更新系统用户信息")]
         [UnitOfWork, HttpPut("edit")]
-        public async Task UpdateUser(UpdateSysUserInput dto)
-        {
-            var user = await _repository.GetByIdAsync(dto.Id);
-            if (user == null) throw Oops.Bah("无效参数");
-
-            dto.Adapt(user);
-            var roles = dto.Roles.Select(x => new SysUserRole()
-            {
-                RoleId = x,
-                UserId = user.Id
-            }).ToList();
-            await _repository.UpdateAsync(user);
-            await _userRoleRepository.DeleteAsync(x => x.UserId == user.Id);
-            await _userRoleRepository.InsertRangeAsync(roles);
-            await _easyCachingProvider.RemoveByPrefixAsync(CacheConst.PermissionKey);
-        }
+        public async Task UpdateUser(UpdateSysUserInput dto) { }
 
         /// <summary>
         /// 系统用户详情
@@ -142,24 +142,9 @@ namespace MyBlog.Server.Application.User
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
-        public async Task<UpdateSysUserInput> Detail([FromQuery] long id)
+        public async Task<UpdateSysUserInput> Detail([FromQuery] long id) 
         {
-            return await _repository.AsQueryable().Where(x => x.Id == id)
-                  .Select(x => new UpdateSysUserInput()
-                  {
-                      Id = x.Id,
-                      Name = x.Name,
-                      Status = x.Status,
-                      OrgId = x.OrgId,
-                      Account = x.Account,
-                      Mobile = x.Mobile,
-                      Remark = x.Remark,
-                      Birthday = x.Birthday,
-                      Email = x.Email,
-                      Gender = x.Gender,
-                      NickName = x.NickName,
-                      Roles = SqlFunc.Subqueryable<SysUserRole>().Where(s => s.UserId == x.Id).ToList(s => s.RoleId)
-                  }).FirstAsync();
+            return null;
         }
 
         /// <summary>
@@ -168,14 +153,7 @@ namespace MyBlog.Server.Application.User
         /// <returns></returns>
         [DisplayName("重置系统用户密码")]
         [HttpPatch]
-        public async Task Reset(ResetPasswordInput dto)
-        {
-            string encrypt = MD5Encryption.Encrypt(_idGenerator.Encode(dto.Id) + dto.Password);
-            await _repository.UpdateAsync(x => new SysUser()
-            {
-                Password = encrypt
-            }, x => x.Id == dto.Id);
-        }
+        public async Task Reset(ResetPasswordInput dto) { }
 
         /// <summary>
         /// 获取当前登录用户的信息
@@ -183,41 +161,7 @@ namespace MyBlog.Server.Application.User
         /// <returns></returns>
         [DisplayName("获取登录用户的信息")]
         [HttpGet]
-        public async Task<SysUserInfoOutput> CurrentUserInfo()
-        {
-            var userId = _authManager.UserId;
-            return await _repository.AsQueryable().Where(x => x.Id == userId)
-                  .Select(x => new SysUserInfoOutput
-                  {
-                      Name = x.Name,
-                      Account = x.Account,
-                      Avatar = x.Avatar,
-                      Birthday = x.Birthday,
-                      Email = x.Email,
-                      Gender = x.Gender,
-                      NickName = x.NickName,
-                      Remark = x.Remark,
-                      LastLoginIp = x.LastLoginIp,
-                      LastLoginAddress = x.LastLoginAddress,
-                      Mobile = x.Mobile,
-                      OrgId = x.OrgId,
-                      OrgName = SqlFunc.Subqueryable<SysOrganization>().Where(o => o.Id == x.OrgId).Select(o => o.Name)
-                  })
-                  .Mapper(dto =>
-                  {
-                      if (_authManager.IsSuperAdmin)
-                      {
-                          dto.AuthBtnList = _repository.AsSugarClient().Queryable<SysMenu>().Where(x => x.Type == MenuType.Button)
-                                .Select(x => x.Code).ToList();
-                      }
-                      else
-                      {
-                          var list = _sysMenuService.GetAuthButtonCodeList(userId).GetAwaiter().GetResult();
-                          dto.AuthBtnList = list.Where(x => x.Access).Select(x => x.Code).ToList();
-                      }
-                  })
-                  .FirstAsync();
-        }
+        public async Task<SysUserInfoOutput> CurrentUserInfo() { return null; }
 
         /// <summary>
         /// 用户修改账户密码
@@ -226,24 +170,7 @@ namespace MyBlog.Server.Application.User
         /// <returns></returns>
         [DisplayName("用户修改账户密码")]
         [HttpPatch]
-        public async Task ChangePassword(ChangePasswordOutput dto)
-        {
-            var userId = _authManager.UserId;
-            string encode = _idGenerator.Encode(userId);
-            string pwd = MD5Encryption.Encrypt($"{encode}{dto.OriginalPwd}");
-            if (!await _repository.IsAnyAsync(x => x.Id == userId && x.Password == pwd))
-            {
-                throw Oops.Bah("原密码错误");
-            }
-            pwd = MD5Encryption.Encrypt($"{encode}{dto.Password}");
-            await _repository.AsSugarClient().Updateable<SysUser>()
-                .SetColumns(x => new SysUser()
-                {
-                    Password = pwd
-                })
-                .Where(x => x.Id == userId)
-                .ExecuteCommandHasChangeAsync();
-        }
+        public async Task ChangePassword(ChangePasswordOutput dto) { }
 
         /// <summary>
         /// 用户修改头像
@@ -252,14 +179,7 @@ namespace MyBlog.Server.Application.User
         /// <returns></returns>
         [DisplayName("用户修改头像")]
         [HttpPatch]
-        public async Task UploadAvatar([FromBody] string url)
-        {
-            long userId = _authManager.UserId;
-            await _repository.UpdateAsync(x => new SysUser()
-            {
-                Avatar = url
-            }, x => x.Id == userId);
-        }
+        public async Task UploadAvatar([FromBody] string url) { }
 
         /// <summary>
         /// 系统用户修改自己的信息
@@ -267,18 +187,6 @@ namespace MyBlog.Server.Application.User
         /// <returns></returns>
         [DisplayName("系统用户修改个人信息")]
         [HttpPatch("updateCurrentUser")]
-        public async Task UpdateCurrentUser(UpdateCurrentUserInput dto)
-        {
-            long userId = _authManager.UserId;
-            await _repository.UpdateAsync(x => new SysUser()
-            {
-                Name = dto.Name,
-                Birthday = dto.Birthday,
-                Email = dto.Email,
-                Gender = dto.Gender,
-                Mobile = dto.Mobile,
-                NickName = dto.NickName
-            }, x => x.Id == userId);
-        }
+        public async Task UpdateCurrentUser(UpdateCurrentUserInput dto) { }
     }
 }

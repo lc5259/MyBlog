@@ -16,3 +16,5 @@ global using Microsoft.EntityFrameworkCore;
 global using System.ComponentModel.DataAnnotations;
 global using MyBlog.Server.Core.Shared;
 global using MyBlog.Server.Core.EFCore.Pager; 
+global using MyBlog.Server.Core.Enum;
+global using Yitter.IdGenerator; 

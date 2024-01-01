@@ -1,4 +1,6 @@
-﻿namespace MyBlog.Server.Application.User.Dto;
+﻿
+
+namespace MyBlog.Server.Application.User.Dto;
 
 public class AddSysUserInput
 {
