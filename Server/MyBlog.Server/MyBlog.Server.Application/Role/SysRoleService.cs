@@ -38,6 +38,7 @@ namespace MyBlog.Server.Application.Role
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
+        [HttpGet]
         public async Task<PagedList<SysRolePageOutput>> Page([FromQuery] SysRoleQueryInput dto)
         {
             return await this._sysRoleRepository
@@ -60,6 +61,8 @@ namespace MyBlog.Server.Application.Role
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
+        [HttpPost]
+        [UnitOfWork]
         public async Task addRole(AddSysRoleInput dto)
         {
             if (await this._sysRoleRepository.AnyAsync(s => s.Code == dto.Code))
@@ -83,6 +86,8 @@ namespace MyBlog.Server.Application.Role
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
+        [HttpPut]
+        [UnitOfWork]
         public async Task UpdateRole(UpdateSysRoleInput dto)
         {
             var role = await this._sysRoleRepository.FindOrDefaultAsync(dto.Id);
@@ -111,6 +116,7 @@ namespace MyBlog.Server.Application.Role
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
+        [HttpGet]
         public async Task<List<long>> GetRoleMenu([FromQuery] long id)
         {
             var date = from p in _sysRoleRepository.AsQueryable()
@@ -126,6 +132,7 @@ namespace MyBlog.Server.Application.Role
         /// 修改角色状态
         /// </summary>
         /// <returns></returns>
+        [HttpPut]
         public async Task SetStatus(AvailabilityDto dto)
         {
             var role = await this._sysRoleRepository.FindOrDefaultAsync(dto.Id);
@@ -139,6 +146,7 @@ namespace MyBlog.Server.Application.Role
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
+        [HttpDelete]
         public async Task Delete(KeyDto dto)
         {
            await  this._sysRoleRepository.DeleteAsync(dto.Id);
@@ -149,6 +157,7 @@ namespace MyBlog.Server.Application.Role
         /// 角色下拉选项
         /// </summary>
         /// <returns></returns>
+        [HttpGet]
         public async Task<List<SelectOutput>> RoleSelect()
         {
            return  await this._sysRoleRepository.AsQueryable().Where(x => x.Status == AvailabilityStatus.Enable)
