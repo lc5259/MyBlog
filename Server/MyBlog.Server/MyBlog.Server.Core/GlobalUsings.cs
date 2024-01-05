@@ -9,3 +9,4 @@ global using System.Text;
 global using System.Threading.Tasks;
 global using Microsoft.EntityFrameworkCore;
 global using MyBlog.Server.Core.Enum;
+global using Microsoft.Extensions.DependencyInjection;

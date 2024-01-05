@@ -13,6 +13,12 @@
 		<None Remove="MyBlog.Server.Web.Core.xml" />
 	</ItemGroup>
 
+
+
+	<ItemGroup>
+	  <PackageReference Include="EasyCaching.Serialization.Json" Version="1.9.2" />
+	</ItemGroup>
+
 	<ItemGroup>
 		<ProjectReference Include="..\MyBlog.Server.Application\MyBlog.Server.Application.csproj" />
 		<ProjectReference Include="..\MyBlog.Server.Database.Migrations\MyBlog.Server.Database.Migrations.csproj" />

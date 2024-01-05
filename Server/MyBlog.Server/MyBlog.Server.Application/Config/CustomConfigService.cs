@@ -13,14 +13,13 @@ using System.Collections;
 using MyBlog.Server.Core.Const;
 using MyBlog.Server.Application.Config.Dtos;
 using System.IO;
-using System.ComponentModel;
 namespace MyBlog.Server.Application.Config;
 
 /// <summary>
 /// 自定义配置业务
 /// </summary>
 public class CustomConfigService
-    : BaseService<CustomConfig>, ITransient
+    : BaseService<CustomConfig>,ITransient
 {
     private readonly IRepository<CustomConfig> _customConfigRepository;
     private readonly IRepository<CustomConfigItem> _customConfigItemRepository;
@@ -75,7 +74,7 @@ public class CustomConfigService
             }
             else
             {
-                json = await queryable.FirstAsync();
+                json = await queryable.FirstOrDefaultAsync();
             }
 
             return string.IsNullOrWhiteSpace(json) ? default(T) : JsonConvert.DeserializeObject<T>(json);

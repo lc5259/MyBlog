@@ -7,6 +7,7 @@ using MyBlog.Server.Application.Menu;
 using MyBlog.Server.Application.User.Dto;
 using MyBlog.Server.Core;
 using MyBlog.Server.Core.Config;
+using MyBlog.Server.Core.Const;
 using MyBlog.Server.Core.Entities;
 using MyBlog.Server.Core.Extensions;
 
@@ -29,7 +30,7 @@ namespace MyBlog.Server.Application.User
         private readonly IRepository<SysUser> _repository;
         private readonly IRepository<SysUserRole> _userRoleRepository;
         private readonly IRepository<SysOrganization> _orgRepository;
-        private readonly SysMenuService _sysMenuService;
+        //private readonly SysMenuService _sysMenuService;
         private readonly CustomConfigService _customConfigService;
         private readonly AuthManager _authManager;
         private readonly IEasyCachingProvider _easyCachingProvider;
@@ -38,7 +39,7 @@ namespace MyBlog.Server.Application.User
         public SysUserService(IRepository<SysUser> repository,
             IRepository<SysUserRole> userRoleRepository,
             IRepository<SysOrganization> orgRepository,
-            SysMenuService sysMenuService,
+            //SysMenuService sysMenuService,
             CustomConfigService customConfigService,
             AuthManager authManager,
             IEasyCachingProvider easyCachingProvider,
@@ -47,7 +48,7 @@ namespace MyBlog.Server.Application.User
             _repository = repository;
             _userRoleRepository = userRoleRepository;
             _orgRepository = orgRepository;
-            _sysMenuService = sysMenuService;
+            //_sysMenuService = sysMenuService;
             _customConfigService = customConfigService;
             _authManager = authManager;
             _easyCachingProvider = easyCachingProvider;
@@ -109,21 +110,30 @@ namespace MyBlog.Server.Application.User
         [DisplayName("添加系统用户")]
         public async Task AddUser(AddSysUserInput dto) 
         {
-            var user = dto.Adapt<SysUser>();
-            user.Id = _idGenerator.NextId();
-            string encode = _idGenerator.Encode(user.Id);
-            var setting =await this._customConfigService.Get<SysSecuritySetting>();
-            user.Password = MD5Encryption.Encrypt(encode+ "123456");
+            try
+            {
+                var user = dto.Adapt<SysUser>();
+                //user.Id = _idGenerator.NextId(); --sqlserver数据库不允许为自增字段赋值。
+                string encode = _idGenerator.Encode(user.Id);
+                var setting = await this._customConfigService.Get<SysSecuritySetting>();
+                user.Password = MD5Encryption.Encrypt(encode + "123456");
 
-            var roles = dto.Roles.Select(x => new SysUserRole
-            { 
-                RoleId = x,
-                UserId = user.Id
-            }).ToList();
+                var roles = dto.Roles.Select(x => new SysUserRole
+                {
+                    RoleId = x,
+                    UserId = user.Id
+                }).ToList();
 
-          
-            await this._repository.InsertAsync(user);
-            await this._userRoleRepository.InsertAsync(roles);
+
+                await this._repository.InsertAsync(user);
+                await this._userRoleRepository.InsertAsync(roles);
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
+            
 
         }
 
@@ -134,7 +144,26 @@ namespace MyBlog.Server.Application.User
         /// <returns></returns>
         [DisplayName("更新系统用户信息")]
         [UnitOfWork, HttpPut("edit")]
-        public async Task UpdateUser(UpdateSysUserInput dto) { }
+        public async Task UpdateUser(UpdateSysUserInput dto) 
+        {
+            var user = await this._repository.FindAsync(dto.Id);
+            if (user == null) 
+            {
+                throw new ArgumentException("无效参数");
+            }
+            dto.Adapt(user);
+            //user = dto.Adapt<SysUser>();
+            var roles = dto.Roles.Select(x => new SysUserRole()
+            { 
+                RoleId = x,
+                UserId = user.Id
+            });
+
+            await this._repository.UpdateAsync(user);
+            await this._userRoleRepository.DeleteAsync( user.Id);
+            await this._userRoleRepository.InsertAsync(roles );
+            await this._easyCachingProvider.RemoveByPrefixAsync(CacheConst.PermissionKey);
+        }
 
         /// <summary>
         /// 系统用户详情
@@ -144,7 +173,25 @@ namespace MyBlog.Server.Application.User
         [HttpGet]
         public async Task<UpdateSysUserInput> Detail([FromQuery] long id) 
         {
-            return null;
+            var roles =  this._userRoleRepository.Where(r => r.UserId == id)
+                                .Select(x => x.RoleId).ToList();
+
+            return await this._repository.Where(x => x.Id == id)
+                .Select(x => new UpdateSysUserInput() 
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Status = x.Status,
+                    OrgId = x.OrgId,
+                    Account = x.Account,
+                    Mobile = x.Mobile,
+                    Remark = x.Remark,
+                    Birthday = x.Birthday,
+                    Email = x.Email,
+                    Gender = x.Gender,
+                    NickName = x.NickName,
+                    Roles = roles
+                }).FirstOrDefaultAsync();
         }
 
         /// <summary>
@@ -153,7 +200,14 @@ namespace MyBlog.Server.Application.User
         /// <returns></returns>
         [DisplayName("重置系统用户密码")]
         [HttpPatch]
-        public async Task Reset(ResetPasswordInput dto) { }
+        public async Task Reset(ResetPasswordInput dto) 
+        {
+            var user = await this._repository.FindAsync(dto.Id);
+            string password = MD5Encryption.Encrypt(_idGenerator.Encode(dto.Id) + dto.Password);
+            user.Password= password;
+            await this._repository.UpdateIncludeAsync(user, new[]{nameof(user.Password)});
+           
+        }
 
         /// <summary>
         /// 获取当前登录用户的信息
@@ -161,7 +215,17 @@ namespace MyBlog.Server.Application.User
         /// <returns></returns>
         [DisplayName("获取登录用户的信息")]
         [HttpGet]
-        public async Task<SysUserInfoOutput> CurrentUserInfo() { return null; }
+        public async Task<SysUserInfoOutput> CurrentUserInfo() 
+        {
+            var userId = _authManager.UserId;
+            var user = await this._repository.FindAsync(userId);
+            if (user == null) { throw new Exception("用户为空"); };
+            var sysuserInfoOut = user.Adapt<SysUserInfoOutput>();
+            sysuserInfoOut.OrgName = this._orgRepository.Where(o => o.Id == user.OrgId)
+                    .Select(o => o.Name).ToString();
+
+            return sysuserInfoOut;
+        }
 
         /// <summary>
         /// 用户修改账户密码
@@ -170,7 +234,23 @@ namespace MyBlog.Server.Application.User
         /// <returns></returns>
         [DisplayName("用户修改账户密码")]
         [HttpPatch]
-        public async Task ChangePassword(ChangePasswordOutput dto) { }
+        public async Task ChangePassword(ChangePasswordOutput dto) 
+        {
+            var userId = _authManager.UserId;
+            var encode = _idGenerator.Encode(userId);
+            string pwd = MD5Encryption.Encrypt($"{encode}{dto.OriginalPwd}");
+
+            if (!await this._repository.AnyAsync(x => x.Id == userId  && x.Password == pwd))
+            {
+                throw Oops.Bah("原密码错误！");
+            }
+            pwd = MD5Encryption.Encrypt($"{encode}{dto.Password}");
+
+            SysUser user = await this._repository.FindAsync(userId);
+            user.Password = pwd;
+            await this._repository.UpdateIncludeAsync(user, new[] { nameof(user.Password)});
+
+        }
 
         /// <summary>
         /// 用户修改头像
@@ -179,7 +259,12 @@ namespace MyBlog.Server.Application.User
         /// <returns></returns>
         [DisplayName("用户修改头像")]
         [HttpPatch]
-        public async Task UploadAvatar([FromBody] string url) { }
+        public async Task UploadAvatar([FromBody] string url)
+        { 
+            long userId = _authManager.UserId;
+            var user = await this._repository.FindAsync(userId);
+            await this._repository.UpdateIncludeAsync(user, new[] { nameof(user.Avatar)});
+        }
 
         /// <summary>
         /// 系统用户修改自己的信息
@@ -187,6 +272,12 @@ namespace MyBlog.Server.Application.User
         /// <returns></returns>
         [DisplayName("系统用户修改个人信息")]
         [HttpPatch("updateCurrentUser")]
-        public async Task UpdateCurrentUser(UpdateCurrentUserInput dto) { }
+        public async Task UpdateCurrentUser(UpdateCurrentUserInput dto)
+        {
+            long userId = _authManager.UserId;
+            var user = await this._repository.FindAsync(userId);
+            dto.Adapt(user);
+            await this._repository.UpdateAsync(user);
+        }
     }
 }

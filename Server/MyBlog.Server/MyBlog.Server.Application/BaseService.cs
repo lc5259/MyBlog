@@ -56,7 +56,6 @@ namespace MyBlog.Server.Application
         [DisplayName("修改状态"), HttpPatch("setStatus")]
         public virtual async Task SetStatus(AvailabilityDto dto)
         {
-            //await _repository.UpdateIncludeAsync(new TEntity(), new[] { "Age", "Name" });
 
             //bool success = await _repository.UpdateAsync(x => new TEntity()
             //{

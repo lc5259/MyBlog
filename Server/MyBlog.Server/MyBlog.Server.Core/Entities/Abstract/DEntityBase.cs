@@ -30,7 +30,7 @@ namespace MyBlog.Server.Core.Entities.Abstract
         /// 主键Id
         /// </summary>
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Comment("Id主键")]
         public virtual TKey Id { get; set; }
      
