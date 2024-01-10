@@ -73,7 +73,7 @@ namespace MyBlog.Server.Application.Logging
         [HttpDelete("clear")]
         public async Task Clear()
         {
-            await _repository.DeleteAsync(x => x.Id > 0);
+            await _repository.DeleteAsync();
         }
     }
 }
