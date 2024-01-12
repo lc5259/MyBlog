@@ -20,6 +20,7 @@ using Lazy.Captcha.Core;
 using OnceMi.AspNetCore.OSS;
 using MrHuo.OAuth.QQ;
 using MrHuo.OAuth;
+using MyBlog.Server.Core.Logging;
 
 namespace MyBlog.Server.Web.Core;
 
@@ -106,7 +107,7 @@ public class Startup : AppStartup
 
         //数据库日志
         // 文档：http://furion.baiqian.ltd/docs/logging#1871-%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8
-        services.AddDatabaseLogging<IDatabaseLoggingWriter>(options =>
+        services.AddDatabaseLogging<DatabaseLoggingWriter>(options =>
         {
             options.WithStackFrame = true;//显示堆栈信息
             options.WithTraceId= true;  //显示线程id
