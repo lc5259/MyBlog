@@ -26,7 +26,7 @@ namespace MyBlog.Server.Application.Blog
         /// <param name="articleId"></param>
         /// <param name="categoryId"></param>
         /// <returns></returns>
-
+        [HttpPost]
         public async Task Add(long articleId, long categoryId)
         {
             await this.repository.InsertAsync(new ArticleCategory()
@@ -35,13 +35,14 @@ namespace MyBlog.Server.Application.Blog
                 CategoryId = categoryId
             });
         }
-        
+
         /// <summary>
         /// 更新文章所属栏目
         /// </summary>
         /// <param name="articleId"></param>
         /// <param name="categoryId"></param>
         /// <returns></returns>
+        [HttpPost]
         public async Task Update(long articleId, long categoryId)
         {
             var articleCategeory = await this.repository.Entities.FindAsync(articleId);
@@ -51,7 +52,7 @@ namespace MyBlog.Server.Application.Blog
             }
             articleCategeory.ArticleId = articleId;
             articleCategeory.CategoryId= categoryId;
-       
+  
             await repository.UpdateAsync(articleCategeory);
         }
     }
