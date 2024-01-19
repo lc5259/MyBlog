@@ -32,8 +32,4 @@
 		<ProjectReference Include="..\MyBlog.Server.Core\MyBlog.Server.Core.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Client\" />
-	</ItemGroup>
-
 </Project>
