@@ -1,4 +1,6 @@
-﻿namespace MyBlog.Server.Application.Client.Dtos;
+﻿using MyBlog.Server.Core.Config;
+
+namespace MyBlog.Server.Application.Client.Dtos;
 
 public class BlogOutput
 {
